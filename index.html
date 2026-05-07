@@ -1,0 +1,865 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>$SOOTH · CASE FILE 599 — the soothsayer files</title>
+<meta name="description" content="On June 11 2022 an account named soothsayer posted four words: '2026: Hantavirus.' Then went silent. Four years later the Hondius docked. This is the case file." />
+<meta property="og:title" content="$SOOTH · CASE FILE 599 — the soothsayer files" />
+<meta property="og:description" content="Nine voices. Three continents. One year named in advance. We did not foretell. We recorded." />
+<meta property="og:image" content="assets/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="assets/og.png" />
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Caveat:wght@500;700&family=Courier+Prime:wght@400;700&family=IBM+Plex+Mono:wght@400;500;600&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Permanent+Marker&family=Special+Elite&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=2" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+</head>
+<body class="no-scroll">
+
+<!-- ============== RED STRING CURSOR CANVAS ============== -->
+<canvas id="strings" aria-hidden="true"></canvas>
+
+<!-- ============== BOOT LOADER ============== -->
+<div id="boot" class="boot">
+  <div class="boot-static"></div>
+  <div class="boot-window">
+    <div class="boot-bar">
+      <span class="boot-classification">◆ DECRYPTING · CLASSIFIED · CASE FILE 599 ◆</span>
+    </div>
+    <div class="boot-stream" id="bootStream"></div>
+    <button id="bootEnter" class="boot-enter" type="button">▸ OPEN THE FILE</button>
+  </div>
+</div>
+
+<!-- ============== BREAKING BAR ============== -->
+<div class="breaking" id="breaking">
+  <span class="break-dot"></span>
+  <span class="break-label">LIVE</span>
+  <div class="break-track" id="breakTrack"></div>
+</div>
+
+<!-- ============== TOPBAR ============== -->
+<header class="topbar">
+  <a class="brand" href="#hero">
+    <span class="brand-stamp">CASE 599</span>
+    <span class="brand-text"><b>$SOOTH</b><i>SAYER</i></span>
+    <span class="brand-tag">— the file</span>
+  </a>
+
+  <div class="ca-bar">
+    <span class="ca-label">CA</span>
+    <code id="caValue" class="ca-value">CA · pending publication</code>
+    <button id="copyCa" class="ca-copy" type="button">COPY</button>
+  </div>
+
+  <nav class="socials">
+    <a id="sx" class="sbtn sbtn-x" href="#" target="_blank" rel="noopener" title="X">𝕏</a>
+    <a id="stg" class="sbtn sbtn-tg" href="#" target="_blank" rel="noopener" title="Telegram">TG</a>
+    <a id="sdex" class="sbtn" href="#" target="_blank" rel="noopener" title="DexScreener">DEX</a>
+    <a id="sdext" class="sbtn" href="#" target="_blank" rel="noopener" title="Dextools">DT</a>
+    <a id="sbuy" class="sbtn sbtn-buy" href="#buy" title="Buy">▸ BUY</a>
+    <button id="muteBtn" class="sbtn sbtn-mute" type="button" title="ambient drone">♪</button>
+  </nav>
+</header>
+
+<main>
+
+<!-- ============== HERO / MASTHEAD ============== -->
+<section class="hero" id="hero">
+  <div class="hero-banner">
+    <span>VOL. I · NO. 1 · MAY 2026 · COMPILED FROM PUBLIC RECORD</span>
+  </div>
+
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div class="hero-eyebrow">— THE SOOTHSAYER FILES —</div>
+      <h1 class="hero-headline">THE EIGHT-WORD<br/><em>PROPHECY</em></h1>
+      <p class="hero-deck">
+        On June 11, 2022, an anonymous English X account posted <b>four words</b> across two lines.
+        It then made three more posts and went silent. <b>For four years.</b>
+      </p>
+      <p class="hero-deck">
+        On May 2, 2026, the WHO opened a multi-country hantavirus investigation aboard the cruise ship MV Hondius.
+      </p>
+      <p class="hero-deck-emphasis">The post said: <em>"2023: Corona ended. 2026: Hantavirus."</em></p>
+
+      <div class="hero-byline">
+        <span>by THE FILE</span> · <span class="dot">●</span> · <span>case opened: 7 May 2026</span> · <span class="dot">●</span> · <span class="redbump">VOL I LIVE</span>
+      </div>
+
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#buy">▸ JOIN THE FILE · BUY $SOOTH</a>
+        <a class="btn btn-ghost" href="#wall">▶ READ THE EVIDENCE</a>
+      </div>
+
+      <ul class="hero-pills">
+        <li>◆ 9 VOICES</li><li>◆ 3 CONTINENTS</li><li>◆ 1 YEAR NAMED</li><li>◆ PUBLIC RECORD</li>
+      </ul>
+    </div>
+
+    <div class="hero-right">
+      <div class="polaroid polaroid-pinned">
+        <div class="pin"></div>
+        <div class="washi"></div>
+        <div class="poly-photo">
+          <svg viewBox="0 0 240 280" aria-hidden="true">
+            <rect width="240" height="280" fill="#1a1318"/>
+            <ellipse cx="120" cy="140" rx="180" ry="200" fill="#0a0608" opacity=".5"/>
+            <path d="M60 280 Q50 180, 90 100 Q108 60, 120 60 Q132 60, 150 100 Q190 180, 180 280 Z" fill="#3a050d"/>
+            <path d="M86 110 Q90 80, 120 75 Q150 80, 154 110 Q150 145, 120 165 Q90 145, 86 110 Z" fill="#0a0608"/>
+            <ellipse cx="120" cy="115" rx="5" ry="2.5" fill="#ede0c4"/>
+            <ellipse cx="120" cy="115" rx="2.5" ry="2.5" fill="#4a7d3a"/>
+            <text x="120" y="240" text-anchor="middle" fill="#9a9082" font-family="Courier Prime" font-size="10" letter-spacing="2">SUBJECT: UNKNOWN</text>
+          </svg>
+        </div>
+        <div class="poly-caption">@iamasoothsayer · 06/2022 · 4 posts · silent</div>
+        <div class="stamp stamp-classified">CLASSIFIED</div>
+      </div>
+
+      <div class="tweet-evidence-mini">
+        <div class="tem-head">
+          <div class="tem-handle">@iamasoothsayer</div>
+          <div class="tem-stamp">UNEDITED · GROK</div>
+        </div>
+        <div class="tem-body">
+          <span class="tem-line">2023: Corona ended</span>
+          <span class="tem-line tem-line-2">2026: Hantavirus</span>
+          <svg class="red-circle" viewBox="0 0 200 60" aria-hidden="true"><path d="M5 30 Q 50 5, 100 28 Q 195 50, 195 30 Q 195 12, 100 32 Q 5 55, 5 30 Z" fill="none" stroke="#c8141a" stroke-width="2.4"/></svg>
+        </div>
+        <div class="tem-meta">8:30 AM · 11 Jun 2022</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-strap">
+    <div class="strap-cell"><span>4</span> tablets</div>
+    <div class="strap-cell"><span>4</span> years silent</div>
+    <div class="strap-cell"><span>9</span> voices on the wall</div>
+    <div class="strap-cell"><span>3</span> continents</div>
+    <div class="strap-cell"><span>1</span> prophecy fulfilled</div>
+    <div class="strap-cell"><span>0</span> answers</div>
+  </div>
+</section>
+
+<!-- ============== EXHIBIT A — THE PROPHECY (deep) ============== -->
+<section class="prophecy-section" id="prophecy">
+  <div class="exhibit-tag exhibit-tag-big">EXHIBIT A · THE PROPHECY</div>
+  <h2 class="section-headline">THE EIGHT WORDS, IN FULL.</h2>
+  <p class="section-deck">Posted 8:30 AM UTC, 11 June 2022, by <b>@iamasoothsayer</b>. The post has not been edited since. <b>Grok confirmed in-thread.</b> Below: the artifact, verbatim, with engagement at the time of viral resurfacing.</p>
+
+  <article class="tweet-card-big">
+    <div class="tcb-head">
+      <div class="tcb-avatar">
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="32" r="31" fill="#3a050d" stroke="#c8141a" stroke-width="1.5"/>
+          <path d="M16 50 Q14 30, 32 20 Q50 30, 48 50 Z" fill="#0a0608"/>
+          <ellipse cx="32" cy="32" rx="3" ry="1.5" fill="#ede0c4"/>
+          <ellipse cx="32" cy="32" rx="1.5" ry="1.5" fill="#4a7d3a"/>
+        </svg>
+      </div>
+      <div class="tcb-name">
+        <div class="tcb-display">soothsayer</div>
+        <div class="tcb-handle">@iamasoothsayer</div>
+      </div>
+      <div class="tcb-stamp">VERIFIED · UNEDITED SINCE 2022</div>
+    </div>
+    <div class="tcb-body">
+      <span class="tcb-line">2023: Corona ended</span>
+      <span class="tcb-line tcb-line-2">2026: Hantavirus</span>
+    </div>
+    <div class="tcb-meta">
+      <div class="tcb-date">8:30 AM · Jun 11, 2022 · X (formerly Twitter)</div>
+      <div class="tcb-engage">
+        <span class="eng-num" data-target="269414">0</span> ❤
+        <span class="eng-sep">·</span>
+        <span class="eng-num" data-target="61433">0</span> ↻
+        <span class="eng-sep">·</span>
+        <span class="eng-num" data-target="268338">0</span> 💬
+      </div>
+    </div>
+    <div class="tcb-footer">
+      <a class="tcb-link" href="https://x.com/iamasoothsayer/status/1535494638391664641" target="_blank" rel="noopener">x.com/iamasoothsayer/status/1535494638391664641 ↗</a>
+      <span class="tcb-mirror">mirror: <a href="https://xcancel.com/iamasoothsayer/status/1535494638391664641" target="_blank" rel="noopener">xcancel</a></span>
+    </div>
+  </article>
+
+  <div class="prophecy-callout">
+    <div class="callout-cell">
+      <div class="cc-stat">269,414</div>
+      <div class="cc-lbl">likes at viral resurfacing</div>
+    </div>
+    <div class="callout-cell">
+      <div class="cc-stat">61,433</div>
+      <div class="cc-lbl">retweets</div>
+    </div>
+    <div class="callout-cell">
+      <div class="cc-stat cc-stat-red">UNEDITED</div>
+      <div class="cc-lbl">since 2022 · per Grok</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== THE FOUR TABLETS ============== -->
+<section class="tablets-section" id="tablets">
+  <div class="exhibit-tag exhibit-tag-big">EXHIBIT B · THE FOUR TABLETS</div>
+  <h2 class="section-headline">THE ACCOUNT'S COMPLETE BIBLIOGRAPHY.</h2>
+  <p class="section-deck">Most readers see only the prediction. The account posted <b>four times</b> in one week. Three are aphorisms. One named the year and the disease. Read again — they are oracles.</p>
+
+  <div class="tablet-grid">
+    <article class="tablet">
+      <div class="tablet-num">TABLET I</div>
+      <div class="tablet-date">10 JUN 2022 · 15:17 UTC</div>
+      <p class="tablet-text">"Everyone is happy today and weep tomorrow."</p>
+      <div class="tablet-meta">2,348 likes · 289 retweets</div>
+      <div class="tablet-gloss">— foretold the cycle</div>
+    </article>
+    <article class="tablet">
+      <div class="tablet-num">TABLET II</div>
+      <div class="tablet-date">10 JUN 2022 · 15:42 UTC</div>
+      <p class="tablet-text">"Love is jealous with limitations. It is possessive but never greedy."</p>
+      <div class="tablet-meta">2,800 likes · 380 retweets</div>
+      <div class="tablet-gloss">— named the keeper</div>
+    </article>
+    <article class="tablet tablet-prime">
+      <div class="tablet-num">TABLET III · the prophecy</div>
+      <div class="tablet-date">11 JUN 2022 · 08:30 UTC</div>
+      <p class="tablet-text">"2023: Corona ended<br/>2026: Hantavirus"</p>
+      <div class="tablet-meta">269,414 likes · 61,433 retweets · 268,338 replies</div>
+      <div class="tablet-gloss">— named the year. named the plague.</div>
+    </article>
+    <article class="tablet">
+      <div class="tablet-num">TABLET IV</div>
+      <div class="tablet-date">17 JUN 2022 · 17:07 UTC</div>
+      <p class="tablet-text">"If a person made you smile and laugh for how many times already, for sure that person can make you cry real tears too."</p>
+      <div class="tablet-meta">7,189 likes · 1,029 retweets</div>
+      <div class="tablet-gloss">— foretold the price</div>
+    </article>
+  </div>
+
+  <div class="tablet-silence">
+    — and then, on June 17, 2022, the account fell silent. <b>It has not posted since.</b>
+  </div>
+</section>
+
+<!-- ============== THE TIMELINE ============== -->
+<section class="timeline-section" id="timeline">
+  <div class="exhibit-tag exhibit-tag-big">EXHIBIT C · TIMELINE</div>
+  <h2 class="section-headline">FOUR YEARS. ONE FRAME.</h2>
+
+  <div class="timeline">
+    <div class="tl-event tl-event-key">
+      <div class="tl-date">10 JUN<br/><span>2022</span></div>
+      <div class="tl-card">
+        <div class="tl-tag">DAY ZERO · BUREAUCRATIC CORONA-END</div>
+        <h3>The U.S. lifts COVID international travel-testing rules.</h3>
+        <p>The CDC formally drops the requirement. First day "Corona ended" becomes <b>bureaucratic reality</b>. Eleven months before WHO's official PHEIC declaration. <b>The same day, @iamasoothsayer makes his first post.</b></p>
+        <a class="tl-cite" href="https://www.cnn.com/2022/06/10/us/five-things-june-10-trnd" target="_blank" rel="noopener">CNN · 10 Jun 2022 ↗</a>
+      </div>
+    </div>
+
+    <div class="tl-event tl-event-key">
+      <div class="tl-date">11 JUN<br/><span>2022</span></div>
+      <div class="tl-card">
+        <div class="tl-tag tl-tag-red">THE PROPHECY</div>
+        <h3>"2023: Corona ended / 2026: Hantavirus"</h3>
+        <p>8:30 AM UTC. Eight words. Posted to a public timeline. The post will not be touched again — Grok confirms unedited since.</p>
+      </div>
+    </div>
+
+    <div class="tl-event">
+      <div class="tl-date">17 JUN<br/><span>2022</span></div>
+      <div class="tl-card">
+        <div class="tl-tag">THE LAST POST</div>
+        <h3>The account goes silent.</h3>
+        <p>One final aphorism — <em>"a person who made you smile can make you cry real tears too"</em> — and total silence. Four years.</p>
+      </div>
+    </div>
+
+    <div class="tl-event">
+      <div class="tl-date">5 MAY<br/><span>2023</span></div>
+      <div class="tl-card">
+        <div class="tl-tag">PROPHECY +1 LANDS</div>
+        <h3>WHO declares end of COVID PHEIC.</h3>
+        <p>Director-General Tedros Adhanom Ghebreyesus formally ends the COVID-19 Public Health Emergency of International Concern. The first half of the soothsayer's prediction lands inside the official window.</p>
+        <a class="tl-cite" href="https://news.un.org/en/story/2023/05/1136367" target="_blank" rel="noopener">UN · WHO · 5 May 2023 ↗</a>
+      </div>
+    </div>
+
+    <div class="tl-event">
+      <div class="tl-date">20 MAR<br/><span>2026</span></div>
+      <div class="tl-card">
+        <div class="tl-tag">THE VESSEL DEPARTS</div>
+        <h3>MV Hondius leaves Ushuaia.</h3>
+        <p>Oceanwide Expeditions cruise. 146 passengers, 23 nationalities. Bound for the Canary Islands via Cabo Verde. Three are already infected.</p>
+      </div>
+    </div>
+
+    <div class="tl-event tl-event-key">
+      <div class="tl-date">2 MAY<br/><span>2026</span></div>
+      <div class="tl-card">
+        <div class="tl-tag tl-tag-red">THE PROPHECY +2 LANDS</div>
+        <h3>WHO Disease Outbreak News No. 599.</h3>
+        <p>Multi-country hantavirus cluster traced to a single cruise vessel. Andes strain. Atypical human-to-human spread. <b>~40% case fatality.</b> "2026: Hantavirus" is no longer a prediction.</p>
+        <a class="tl-cite" href="https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON599" target="_blank" rel="noopener">WHO · DON 599 ↗</a>
+      </div>
+    </div>
+
+    <div class="tl-event">
+      <div class="tl-date">6 MAY<br/><span>2026</span></div>
+      <div class="tl-card">
+        <div class="tl-tag">RESURRECTION</div>
+        <h3>Jordan Crowder resurfaces the post.</h3>
+        <p>The 2022 prediction goes hyperviral. Hungrybox: <em>"why is this guy's handle soothsayer and he posted this in 2022 this is so fucking eerie."</em> SAY CHEESE retweets to ~10M followers. Polymarket pumps to 38% YES. The press follows.</p>
+      </div>
+    </div>
+
+    <div class="tl-event tl-event-key">
+      <div class="tl-date">— TODAY —</div>
+      <div class="tl-card">
+        <div class="tl-tag tl-tag-red">THE FILE OPENS</div>
+        <h3>You are reading the case file.</h3>
+        <p>The soothsayer remains silent. Hantavirus continues spreading. Polymarket sits at 9% YES on $960K+ volume. Nine voices are on the wall. <b>The fifth tablet is on Ethereum.</b></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== THE WALL — 9 VOICES ============== -->
+<section class="wall-section" id="wall">
+  <div class="exhibit-tag exhibit-tag-big">EXHIBIT D · THE WALL</div>
+  <h2 class="section-headline">NINE VOICES NAMED <em>2026</em><br/>BEFORE 2026.</h2>
+  <p class="section-deck">Each entry: dated, sourced, verifiable. We did not curate ideologically. We did not pick the famous and skip the rest. <b>This is what we found in the public record.</b></p>
+
+  <div class="wall-board" id="wallBoard">
+    <svg class="wall-strings" viewBox="0 0 1400 1100" aria-hidden="true" preserveAspectRatio="none">
+      <path d="M700 80 Q 200 200, 260 360" stroke="#d11a2a" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="800" stroke-dashoffset="800" class="ws-1"/>
+      <path d="M700 80 Q 750 200, 700 360" stroke="#d11a2a" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="600" stroke-dashoffset="600" class="ws-2"/>
+      <path d="M700 80 Q 1100 200, 1140 360" stroke="#d11a2a" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="800" stroke-dashoffset="800" class="ws-3"/>
+      <path d="M700 80 Q 200 600, 260 760" stroke="#d11a2a" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="1100" stroke-dashoffset="1100" class="ws-4"/>
+      <path d="M700 80 Q 700 600, 700 760" stroke="#d11a2a" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="900" stroke-dashoffset="900" class="ws-5"/>
+      <path d="M700 80 Q 1100 600, 1140 760" stroke="#d11a2a" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="1100" stroke-dashoffset="1100" class="ws-6"/>
+      <path d="M700 80 Q 350 1000, 460 1020" stroke="#d11a2a" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="1300" stroke-dashoffset="1300" class="ws-7"/>
+      <path d="M700 80 Q 950 1000, 940 1020" stroke="#d11a2a" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="1300" stroke-dashoffset="1300" class="ws-8"/>
+    </svg>
+
+    <!-- ANCHOR voice — soothsayer center top -->
+    <article class="voice-card vc-anchor" style="grid-column:2;grid-row:1">
+      <div class="pin pin-red"></div>
+      <div class="vc-flag">VOICE I/IX · ANCHOR</div>
+      <h3>@iamasoothsayer</h3>
+      <div class="vc-where">ANONYMOUS · ENGLISH</div>
+      <div class="vc-when">11 JUN 2022 · 8:30 UTC</div>
+      <p class="vc-quote">"2023: Corona ended<br/>2026: Hantavirus"</p>
+      <div class="vc-attest">— named both year and disease.</div>
+      <a class="vc-link" href="https://x.com/iamasoothsayer/status/1535494638391664641" target="_blank" rel="noopener">x.com/iamasoothsayer ↗</a>
+    </article>
+
+    <!-- Globa Sr. -->
+    <article class="voice-card" style="grid-column:1;grid-row:2">
+      <div class="pin pin-red"></div>
+      <div class="washi-tape"></div>
+      <div class="vc-flag">VOICE II/IX</div>
+      <h3>PAVEL GLOBA</h3>
+      <div class="vc-where">RUSSIA · ASTROLOGY</div>
+      <div class="vc-when">7 MAY 2020 · Radio Komsomolskaya Pravda</div>
+      <p class="vc-quote">"Если не подготовиться серьезно, то это будет сравнимо с эпидемией «испанки» 1918–1919 годов."</p>
+      <p class="vc-translation">"If we don't prepare seriously, it will be comparable to the Spanish flu epidemic of 1918–1919."</p>
+      <div class="vc-attest">Russia's most-cited astrologer. On state radio. Two years before the prophecy.</div>
+      <a class="vc-link" href="https://radiokp.ru/eto-budet-cherez-dva-tri-goda-globa-predrek-vozvraschenie-pandemii_nid20548_au1914au" target="_blank" rel="noopener">radiokp.ru ↗</a>
+    </article>
+
+    <article class="voice-card" style="grid-column:2;grid-row:2">
+      <div class="pin pin-red"></div>
+      <div class="vc-flag">VOICE III/IX</div>
+      <h3>МЕХДИ · MEHDI</h3>
+      <div class="vc-where">IRAN/RUSSIA · "BATTLE OF PSYCHICS"</div>
+      <div class="vc-when">18 OCT 2022 · StarHit</div>
+      <p class="vc-quote">"Появится новый вирус, мощнее того, что мы называем COVID-19. Инфекция ударит по нервным клеткам."</p>
+      <p class="vc-translation">"A new virus will appear, more powerful than COVID-19. The infection will strike nerve cells."</p>
+      <div class="vc-attest">Won Russia's biggest psychic show. On the record. Four months after the soothsayer.</div>
+      <a class="vc-link" href="https://www.starhit.ru/novosti/virus-moschnee-kovida-i-voda-po-tsene-nefti-mehdi-ebragimi-vafa-o-sudbe-mira-v-blijayshie-10-let-283206/" target="_blank" rel="noopener">starhit.ru ↗</a>
+    </article>
+
+    <article class="voice-card" style="grid-column:3;grid-row:2">
+      <div class="pin pin-red"></div>
+      <div class="washi-tape"></div>
+      <div class="vc-flag">VOICE IV/IX</div>
+      <h3>ТАМАРА ГЛОБА · TAMARA GLOBA</h3>
+      <div class="vc-where">RUSSIA · ASTROLOGY</div>
+      <div class="vc-when">23 DEC 2024 · StarHit / Jan 2026 · Ura.News</div>
+      <p class="vc-quote">"2025 и 2026-й — это поворотные годы. Май 2026 перевернёт всё."</p>
+      <p class="vc-translation">"2025 and 2026 are pivotal years. May 2026 will overturn everything."</p>
+      <div class="vc-attest">Named the month. The Hondius cluster was reported on the second of May.</div>
+      <a class="vc-link" href="https://ura.news/news/1053090694" target="_blank" rel="noopener">ura.news ↗</a>
+    </article>
+
+    <article class="voice-card" style="grid-column:1;grid-row:3">
+      <div class="pin pin-red"></div>
+      <div class="vc-flag">VOICE V/IX</div>
+      <h3>BABA VANGA</h3>
+      <div class="vc-where">BULGARIA · SEER (d. 1996)</div>
+      <div class="vc-when">recorded by biographer Krasimira Stoyanova · circulated via Russian press</div>
+      <p class="vc-quote">"Частицы опасного вируса заморожены в ледниках, однако в результате изменения климата попадут в воздух и распространятся по всему миру."</p>
+      <p class="vc-translation">"Frozen virus particles in glaciers will be released by climate change and cause a new pandemic."</p>
+      <div class="vc-attest">Andes hantavirus is rodent-borne. Originates in South America. 30 years dead. Still on the wall.</div>
+      <a class="vc-link" href="https://vm.ru/society/1005212-vanga-preduprezhdala-uchenye-rasskazali-ob-opasnyh-virusah-kotorye-mogut-ozhit-iz-za-tayaniya-lednikov" target="_blank" rel="noopener">vm.ru ↗</a>
+    </article>
+
+    <article class="voice-card" style="grid-column:2;grid-row:3">
+      <div class="pin pin-red"></div>
+      <div class="washi-tape"></div>
+      <div class="vc-flag">VOICE VI/IX</div>
+      <h3>曾仕強 · ZENG SHIQIANG</h3>
+      <div class="vc-where">TAIWAN · I CHING (d. 2018)</div>
+      <div class="vc-when">c. 2015 lecture series · still circulating</div>
+      <p class="vc-quote">"未来5年是人类大量死亡的阶段。上天的第一个工具叫做瘟疫。这种瘟疫传播很快，无药可救。"</p>
+      <p class="vc-translation">"The next 5 years are mass human death. Heaven's first tool is plague. It spreads fast. There is no cure."</p>
+      <div class="vc-attest">Framed 2026 as 丙午 — the Red Horse year. He died in 2018. The prediction outlived him.</div>
+      <a class="vc-link" href="https://zhuanlan.zhihu.com/p/1986752336928991055" target="_blank" rel="noopener">zhihu ↗</a>
+    </article>
+
+    <article class="voice-card" style="grid-column:3;grid-row:3">
+      <div class="pin pin-red"></div>
+      <div class="vc-flag">VOICE VII/IX</div>
+      <h3>赊刀人 · THE KNIFE-SELLERS</h3>
+      <div class="vc-where">CHINA · FOLK PROPHECY</div>
+      <div class="vc-when">3 FEB 2026 · Epoch Times (n14689921)</div>
+      <p class="vc-quote">"二六红马血火喷。<br/>西洋暗无天日。<br/>南洋米贵如珍珠。<br/>东洋遍地是枯骨。"</p>
+      <p class="vc-translation">"2026 Red Horse, blood and fire spew. The Western Ocean is darkened sunless. South Seas: rice precious as pearls. East: bones bleached."</p>
+      <div class="vc-attest">A folk verse. Published months before the cruise.</div>
+      <a class="vc-link" href="https://www.epochtimes.com/gb/26/2/3/n14689921.htm" target="_blank" rel="noopener">epochtimes.com ↗</a>
+    </article>
+
+    <article class="voice-card" style="grid-column:1;grid-row:4">
+      <div class="pin pin-red"></div>
+      <div class="washi-tape"></div>
+      <div class="vc-flag">VOICE VIII/IX</div>
+      <h3>推背圖 · TUI BEI TU · IMG XLI</h3>
+      <div class="vc-where">CHINA · TANG DYNASTY (7th C.)</div>
+      <div class="vc-when">attributed to Li Chunfeng &amp; Yuan Tiangang</div>
+      <p class="vc-quote">"天地晦盲 草木蕃殖<br/>陰陽反背 上土下日"</p>
+      <p class="vc-translation">"Heaven and earth go dark. Plants multiply unchecked. Yin and Yang reverse. Earth above, sun below."</p>
+      <div class="vc-attest">Image #41 of 60. Imperial prophecy book. Thirteen centuries of margin to read into.</div>
+      <a class="vc-link" href="https://en.wikipedia.org/wiki/Tui_bei_tu" target="_blank" rel="noopener">wikipedia ↗</a>
+    </article>
+
+    <article class="voice-card" style="grid-column:3;grid-row:4">
+      <div class="pin pin-red"></div>
+      <div class="vc-flag">VOICE IX/IX</div>
+      <h3>丙午 · THE RED FIRE HORSE YEAR</h3>
+      <div class="vc-where">SINO-RUSSIAN FOLK ASTROLOGY</div>
+      <div class="vc-when">30 DEC 2025 · Lenta · pre-published</div>
+      <p class="vc-quote">"Год Красной Огненной Лошади. Солнечное затмение 17 февраля традиционно активирует вирусы."</p>
+      <p class="vc-translation">"Year of the Red Fire Horse. The solar eclipse on February 17 traditionally activates viruses (cf. coronavirus 2019)."</p>
+      <div class="vc-attest">Pre-published in Russian mainstream press 4–6 months before the outbreak. The calendar said it before the WHO did.</div>
+      <a class="vc-link" href="https://lenta.ru/articles/2025/12/30/god-krasnoy-ognennoy-loshadi-2026/" target="_blank" rel="noopener">lenta.ru ↗</a>
+    </article>
+  </div>
+
+  <p class="wall-foot">Each quote above is verifiable in indexed media. Click each <i>↗</i> to read the source. We are recording. Not asserting causation.</p>
+</section>
+
+<!-- ============== THE TRIAD ============== -->
+<section class="triad-section" id="triad">
+  <div class="exhibit-tag exhibit-tag-big">EXHIBIT E · THE PROFILE</div>
+  <h2 class="section-headline">THREE SIGILS. ONE SENTENCE.</h2>
+  <p class="section-deck">The soothsayer's profile is decorated with three small symbols. Read individually they are decoration. Read together they are <b>Bronze-Age symbol-language</b>. Decoded by the file.</p>
+
+  <div class="triad-stage">
+    <div class="sigil-card sc-1">
+      <div class="sc-num">01</div>
+      <svg viewBox="0 0 100 100" aria-hidden="true">
+        <g transform="translate(50 50)">
+          <polygon points="0,-40 7,-7 40,0 7,7 0,40 -7,7 -40,0 -7,-7" fill="#f4ebd7" stroke="#18120e" stroke-width="2"/>
+          <polygon points="0,-26 18,-18 26,0 18,18 0,26 -18,18 -26,0 -18,-18" fill="#c8141a"/>
+          <circle r="4" fill="#18120e"/>
+        </g>
+      </svg>
+      <h3>STAR OF VENUS</h3>
+      <p>The eight-pointed star of <em>Inanna</em> — Sumerian goddess of love, war, and prophecy. Worshipped in three Venus phases: Morning, Evening, Princely.</p>
+      <div class="sc-decode">DECODE → <b>"the eye that names"</b></div>
+    </div>
+
+    <div class="sigil-card sc-2">
+      <div class="sc-num">02</div>
+      <svg viewBox="0 0 120 80" aria-hidden="true">
+        <path d="M10 50 Q 60 5, 110 50 Q 60 70, 10 50 Z" fill="none" stroke="#18120e" stroke-width="3"/>
+        <circle cx="60" cy="48" r="14" fill="#18120e"/>
+        <circle cx="60" cy="48" r="6" fill="#c8141a"/>
+        <path d="M40 60 L 30 76 M 80 60 L 90 76 Q 95 70, 92 64" fill="none" stroke="#18120e" stroke-width="2.5"/>
+      </svg>
+      <h3>EYE OF HORUS</h3>
+      <p>Egyptian seer-eye. Per <em>Krauss (2002)</em>, the Eye <em>originally represented Venus</em> as morning + evening star — same stars as Inanna's. <a href="https://www.academia.edu/38133320" target="_blank" rel="noopener">Krauss · academia.edu ↗</a></p>
+      <div class="sc-decode">DECODE → <b>"the eye that sees"</b></div>
+    </div>
+
+    <div class="sigil-card sc-3">
+      <div class="sc-num">03</div>
+      <svg viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="36" fill="none" stroke="#18120e" stroke-width="3"/>
+        <line x1="50" y1="14" x2="50" y2="86" stroke="#18120e" stroke-width="3"/>
+        <line x1="50" y1="50" x2="22" y2="78" stroke="#18120e" stroke-width="3"/>
+        <line x1="50" y1="50" x2="78" y2="78" stroke="#18120e" stroke-width="3"/>
+        <circle cx="50" cy="50" r="3" fill="#c8141a"/>
+      </svg>
+      <h3>TURN PEACE UP</h3>
+      <p>The peace symbol — inverted. Same shape in runic tradition is the <em>Todesrune</em>. The dove flipped is the crow. The hand that calls in <b>Nergal</b> — Mesopotamian god of plague, in-law to Inanna.</p>
+      <div class="sc-decode">DECODE → <b>"the eye that ends"</b></div>
+    </div>
+  </div>
+
+  <div class="chain-readout">
+    <div class="chain-line">PROPHECY <span>→</span> SIGHT <span>→</span> PLAGUE</div>
+    <div class="chain-myth">Inanna · sister of Ereshkigal · in-law of <b>Nergal</b> — the god of pestilence</div>
+    <p class="chain-foot">The triad reads as one sentence in three glyphs. We did not write it. We are recording that it was written.</p>
+  </div>
+</section>
+
+<!-- ============== THE ABSENCE ============== -->
+<section class="absence-section" id="absence">
+  <div class="exhibit-tag exhibit-tag-big">EXHIBIT F · THE ABSENCE</div>
+  <h2 class="section-headline">WHO ELSE NAMED IT?</h2>
+  <p class="section-deck">We searched the rest of the indexable internet. The result is more interesting than the wall.</p>
+
+  <div class="absence-list">
+    <div class="abs-row" data-checked>
+      <span class="abs-mark">×</span>
+      <span class="abs-label">Substack</span>
+      <span class="abs-result">— no post named "hantavirus + 2026" before May 4, 2026.<br/>Not Topol. Not Faust. Not Jetelina. Not Panthagani. Not Weinstein. Not Stoller. Not Chudov.</span>
+    </div>
+    <div class="abs-row" data-checked>
+      <span class="abs-mark">×</span>
+      <span class="abs-label">Prediction markets</span>
+      <span class="abs-result">— Polymarket, Manifold, Metaculus, Kalshi. The earliest hantavirus contract opened <b>May 4, 2026</b> — two days after the WHO bulletin.</span>
+    </div>
+    <div class="abs-row" data-checked>
+      <span class="abs-mark">×</span>
+      <span class="abs-label">Anglo astrology press</span>
+      <span class="abs-result">— Chani Nicholas. The AstroTwins. Susan Miller. Jessica Adams. None named the disease.</span>
+    </div>
+    <div class="abs-row" data-checked>
+      <span class="abs-mark">×</span>
+      <span class="abs-label">Mainstream English journalism</span>
+      <span class="abs-result">— no major Anglo journalist filed a piece naming hantavirus + 2026 by name in advance.</span>
+    </div>
+    <div class="abs-row" data-checked>
+      <span class="abs-mark">×</span>
+      <span class="abs-label">Bill Gates "predicted hantavirus"</span>
+      <span class="abs-result">— circulated viral claim. <b>Debunked</b>. The supposed source doesn't exist. <a href="https://www.newsx.com/world/hantavirus-updates-did-bill-gates-predict-hantavirus-next-pandemic-could-be-more-severe-claim-goes-viral-watch-215069/" target="_blank" rel="noopener">NewsX debunk ↗</a></span>
+    </div>
+    <div class="abs-row" data-checked>
+      <span class="abs-mark">×</span>
+      <span class="abs-label">Hopi · Cayce · Nostradamus</span>
+      <span class="abs-result">— no specific pre-2026 text predicted hantavirus by name. All hits are post-hoc YouTube videos uploaded after May 2026.</span>
+    </div>
+    <div class="abs-row abs-hit" data-checked>
+      <span class="abs-mark">✓</span>
+      <span class="abs-label">@iamasoothsayer</span>
+      <span class="abs-result"><b>The only public, dated, English-language pre-outbreak hantavirus + 2026 marker on the indexable internet.</b></span>
+    </div>
+  </div>
+
+  <div class="absence-quote">
+    <em>"That is the entire case."</em>
+    <cite>— THE FILE EDITOR</cite>
+  </div>
+</section>
+
+<!-- ============== THE LATE-RISERS — post-outbreak Substack reactions ============== -->
+<section class="late-section" id="late">
+  <div class="exhibit-tag exhibit-tag-big">EXHIBIT G · THE LATE-RISERS</div>
+  <h2 class="section-headline">EVERYBODY ELSE HAD TO WAIT.</h2>
+  <p class="section-deck">After WHO DON 599 dropped, the credentialed Substack world finally posted. Each piece below was published <b>after</b> the prophecy had already landed.</p>
+
+  <div class="late-grid">
+    <article class="late-card">
+      <div class="late-tag">SUBSTACK · 4 MAY 2026</div>
+      <h3>Jeremy Faust, MD</h3>
+      <div class="late-pub">Inside Medicine</div>
+      <p class="late-quote">"I'm not yet worried, but I am very interested."</p>
+      <a class="late-link" href="https://insidemedicine.substack.com/p/hantavirus-landing-page" target="_blank" rel="noopener">insidemedicine.substack.com ↗</a>
+    </article>
+
+    <article class="late-card">
+      <div class="late-tag">SUBSTACK · 6 MAY 2026</div>
+      <h3>Katelyn Jetelina + Marisa Donnelly</h3>
+      <div class="late-pub">Your Local Epidemiologist · 573 shares</div>
+      <p class="late-quote">"This is not Covid-19. But it is a serious, unique outbreak with <b>no playbook</b>."</p>
+      <a class="late-link" href="https://yourlocalepidemiologist.substack.com/p/hantavirus-situation-update-and-getting" target="_blank" rel="noopener">yourlocalepidemiologist.substack.com ↗</a>
+    </article>
+
+    <article class="late-card">
+      <div class="late-tag">SUBSTACK · 7 MAY 2026</div>
+      <h3>Kristen Panthagani, MD, PhD</h3>
+      <div class="late-pub">You Can Know Things</div>
+      <p class="late-quote">"The internet is stressing over the hantavirus cruise ship outbreak. More cases ≠ the next pandemic."</p>
+      <a class="late-link" href="https://youcanknowthings.substack.com/p/a-hantavirus-update" target="_blank" rel="noopener">youcanknowthings.substack.com ↗</a>
+    </article>
+
+    <article class="late-card late-card-conspiracy">
+      <div class="late-tag late-tag-red">CONSPIRACY · 7 MAY 2026</div>
+      <h3>JD Rucker</h3>
+      <div class="late-pub">JD Rucker's Substack · 50 shares</div>
+      <p class="late-quote">"If a malign actor wanted to design a curtain-raiser for a manufactured pandemic, they would want exactly this. <b>Disease X dress rehearsal.</b>"</p>
+      <a class="late-link" href="https://jdrucker.substack.com/p/the-hantavirus-cruise-and-the-disease" target="_blank" rel="noopener">jdrucker.substack.com ↗</a>
+    </article>
+
+    <article class="late-card late-card-conspiracy">
+      <div class="late-tag late-tag-red">CONSPIRACY · 7 MAY 2026</div>
+      <h3>Alex Krainer</h3>
+      <div class="late-pub">I-System TrendCompass</div>
+      <p class="late-quote">"Polaris I &amp; II war games. Moderna mRNA hantavirus vaccine summer 2024. GAVI's 2021 piece <em>'The Next Pandemic: Hantavirus?'</em>"</p>
+      <a class="late-link" href="https://trendcompass.substack.com/p/hantavirus-scare-ramps-up" target="_blank" rel="noopener">trendcompass.substack.com ↗</a>
+    </article>
+
+    <article class="late-card">
+      <div class="late-tag">PRESS · MAY 2026</div>
+      <h3>The Daily Beast</h3>
+      <div class="late-pub">on the right-wing amplification cycle</div>
+      <p class="late-quote">"MAGA Melts Down With Rat Virus Conspiracies." MTG, Libs of TikTok, Wall Street Mav — all framing the post as foreknowledge.</p>
+      <a class="late-link" href="https://www.thedailybeast.com/maga-melts-down-with-rat-virus-conspiracies/" target="_blank" rel="noopener">thedailybeast.com ↗</a>
+    </article>
+  </div>
+</section>
+
+<!-- ============== THE VIRAL CASCADE ============== -->
+<section class="cascade-section" id="cascade">
+  <div class="exhibit-tag exhibit-tag-big">EXHIBIT H · THE CASCADE</div>
+  <h2 class="section-headline">HOW THE FILE WENT PUBLIC.</h2>
+  <p class="section-deck">May 6, 2026. One man surfaces a four-year-old post. Within seventy-two hours it has crossed every demographic on the platform.</p>
+
+  <div class="cascade-tree">
+    <div class="cascade-source">
+      <div class="cs-tag">PATIENT ZERO</div>
+      <h3>Jordan Crowder</h3>
+      <p>Surfaced the soothsayer post on May 6, 2026. The first viral framing.</p>
+    </div>
+
+    <div class="cascade-fan">
+      <article class="qt-card">
+        <div class="qt-handle">@LiquidHbox · Hungrybox</div>
+        <p>"why is this guy's handle soothsayer and he posted this in 2022 this is so fucking eerie"</p>
+        <a href="https://x.com/LiquidHbox/status/2052249115950461223" target="_blank" rel="noopener">x.com/LiquidHbox ↗</a>
+      </article>
+      <article class="qt-card">
+        <div class="qt-handle">@SaycheeseDGTL · ~10M followers</div>
+        <p>"A weird twitter account predicted that the Hantavirus virus would spread in 2026. (It hasn't tweeted since.)"</p>
+        <a href="https://x.com/SaycheeseDGTL/status/2052253491293253828" target="_blank" rel="noopener">x.com/SaycheeseDGTL ↗</a>
+      </article>
+      <article class="qt-card">
+        <div class="qt-handle">@aakashgupta</div>
+        <p>"this dude called hantavirus in 2022. The odds are so low you'd think he planted it."</p>
+        <a href="https://x.com/aakashgupta/status/2052290346907001294" target="_blank" rel="noopener">x.com/aakashgupta ↗</a>
+      </article>
+      <article class="qt-card qt-card-poly">
+        <div class="qt-handle">@Polymarket · official</div>
+        <p>"this guy needs to get on Polymarket"</p>
+        <a href="https://polymarket.com/event/hantavirus-pandemic-in-2026" target="_blank" rel="noopener">polymarket · pandemic 2026 ↗</a>
+      </article>
+      <article class="qt-card">
+        <div class="qt-handle">@_constitucion78 · Spanish</div>
+        <p>"Tweet de 2022 ¿Quién está detrás de esta cuenta? ¿O ha podido ser mera casualidad?"</p>
+        <a href="https://x.com/_constitucion78/status/2052283566956982686" target="_blank" rel="noopener">x.com/_constitucion78 ↗</a>
+      </article>
+      <article class="qt-card">
+        <div class="qt-handle">@WallStreetMav</div>
+        <p>"I am not taking the mRNA vaccine. From 2022..."</p>
+        <a href="https://x.com/WallStreetMav/status/2052246852070719559" target="_blank" rel="noopener">x.com/WallStreetMav ↗</a>
+      </article>
+    </div>
+
+    <div class="cascade-meta">
+      <div class="cm-stat"><b>72</b><span>hours from resurface to global press</span></div>
+      <div class="cm-stat"><b>$960K</b><span>Polymarket volume on the new market</span></div>
+      <div class="cm-stat"><b>38<small>%</small></b><span>peak YES on "pandemic 2026?"</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== THE 10TH VOICE ============== -->
+<section class="submit-section" id="submit">
+  <div class="exhibit-tag exhibit-tag-big">EXHIBIT IX · THE 10TH VOICE</div>
+  <h2 class="section-headline">FIND US <em>THE 10TH VOICE.</em></h2>
+  <p class="section-deck">The wall lists nine. The internet is large and we are small. If you can find a public, dated, pre-2026 hantavirus + 2026 prediction we missed — submit it. We will publish on the wall and credit you.</p>
+
+  <div class="submit-card">
+    <div class="submit-stamp">OPEN CALL</div>
+    <h3>FILE A NEW VOICE</h3>
+    <form class="submit-form" id="submitForm" onsubmit="event.preventDefault(); document.getElementById('submitMsg').classList.add('shown'); this.reset();">
+      <label>SOURCE URL</label>
+      <input type="url" placeholder="https://..." required />
+
+      <label>WHAT DID THEY SAY · verbatim quote, native language ok</label>
+      <textarea required rows="3" placeholder="paste the quote..."></textarea>
+
+      <label>DATE OF PUBLICATION (must be before 2 May 2026)</label>
+      <input type="date" max="2026-05-02" required />
+
+      <div class="form-row">
+        <div>
+          <label>YOUR HANDLE / CREDIT (or "anonymous")</label>
+          <input type="text" placeholder="@..." />
+        </div>
+        <div>
+          <label>TRANSLATION (optional)</label>
+          <input type="text" placeholder="english translation..." />
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-xl">▸ FILE THE VOICE</button>
+
+      <div class="submit-msg" id="submitMsg">
+        ✓ submission queued. the file will review. if we publish, we credit. if we reject, we tell you why.
+      </div>
+    </form>
+
+    <div class="submit-criteria">
+      <div class="sc-list sc-accept">
+        <h4>WE ACCEPT</h4>
+        <ul>
+          <li>◆ public — findable by a journalist</li>
+          <li>◆ dated — verifiable timestamp before 2 May 2026</li>
+          <li>◆ named — must explicitly name BOTH hantavirus AND a 2026-adjacent date</li>
+          <li>◆ sourced — submit the URL, not a screenshot</li>
+        </ul>
+      </div>
+      <div class="sc-list sc-reject">
+        <h4>WE WILL NOT ACCEPT</h4>
+        <ul>
+          <li>× post-hoc YouTube videos uploaded after May 2026</li>
+          <li>× generic "next pandemic" predictions that don't name the disease</li>
+          <li>× claims you cannot link to</li>
+          <li>× anything fabricated or AI-generated</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== CLOSING ARGUMENT ============== -->
+<section class="closing-section">
+  <div class="closing-inner">
+    <div class="closing-stamp">CLOSING ARGUMENT · §X</div>
+    <h2 class="closing-headline">SOMEONE NAMED IT.<br/>WE NAMED THE NAMER.</h2>
+    <p class="closing-body">
+      We do not assert causation. We do not allege a leak. We do not credit any individual with foreknowledge.
+      <br/><br/>
+      We are recording — in public, with sources, with stamps — that <b>nine independent voices on three continents named 2026 as the year of plague before 2026 began</b>, and that one of those voices, an anonymous account that has spoken only four times in its life, named the disease.
+      <br/><br/>
+      The simplest explanation for the aggregate is coincidence. The next-simplest is something stranger.
+      <br/><br/>
+      You may believe whichever you like.
+      <span class="closing-pull">The file is open. The fifth tablet is on Ethereum.</span>
+    </p>
+  </div>
+</section>
+
+<!-- ============== TOKENOMICS ============== -->
+<section class="lit-section" id="liturgy">
+  <div class="exhibit-tag exhibit-tag-big">EXHIBIT XI · THE NUMBERS</div>
+  <h2 class="section-headline">THE LITURGY.</h2>
+  <div class="lit-grid">
+    <div class="lit-card"><div class="lit-num">5,555,555,555</div><div class="lit-lbl">total supply · five tablets, five fives</div></div>
+    <div class="lit-card"><div class="lit-num">0%</div><div class="lit-lbl">tax · buy &amp; sell</div></div>
+    <div class="lit-card"><div class="lit-num">100%</div><div class="lit-lbl">LP burned at launch</div></div>
+    <div class="lit-card"><div class="lit-num">0</div><div class="lit-lbl">team allocation</div></div>
+    <div class="lit-card"><div class="lit-num">9</div><div class="lit-lbl">voices on the wall</div></div>
+    <div class="lit-card"><div class="lit-num">3</div><div class="lit-lbl">continents named</div></div>
+    <div class="lit-card"><div class="lit-num">1</div><div class="lit-lbl">prophecy fulfilled</div></div>
+    <div class="lit-card"><div class="lit-num">$SOOTH</div><div class="lit-lbl">the fifth tablet</div></div>
+  </div>
+</section>
+
+<!-- ============== BUY ============== -->
+<section class="buy-section" id="buy">
+  <div class="buy-inner">
+    <div class="buy-stamp">SUBSCRIBE TO THE FILE · §XII</div>
+    <h2 class="buy-headline">JOIN THE RECORD.</h2>
+    <p class="buy-tagline">Four tablets recorded the past. The fifth tablet records you.</p>
+
+    <div class="buy-ca">
+      <div class="buy-ca-label">contract address · ethereum mainnet</div>
+      <div class="buy-ca-row">
+        <code id="caValueBig">CA · pending publication</code>
+        <button id="copyCaBig" class="btn btn-tiny">COPY</button>
+      </div>
+    </div>
+
+    <div class="buy-cta">
+      <a class="btn btn-primary btn-xl" id="uniswapBig" href="#" target="_blank" rel="noopener">▸ BUY ON UNISWAP</a>
+      <a class="btn btn-ghost btn-xl" id="chartBig" href="#" target="_blank" rel="noopener">VIEW CHART</a>
+    </div>
+
+    <div class="buy-steps">
+      <div class="buy-step"><span>01</span> open Uniswap.</div>
+      <div class="buy-step"><span>02</span> paste the contract address.</div>
+      <div class="buy-step"><span>03</span> accept being recorded into the fifth tablet.</div>
+      <div class="buy-step"><span>04</span> wait. the file remains open.</div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============== FOOTER ============== -->
+<footer class="footer">
+  <div class="evidence-locker">
+    <div class="locker-stamp">◆ EVIDENCE LOCKER · public record · §XIII ◆</div>
+    <div class="locker-grid">
+      <div>
+        <h4>[A] THE ARTIFACT</h4>
+        <ul>
+          <li><a href="https://x.com/iamasoothsayer/status/1535494638391664641" target="_blank" rel="noopener">the prediction tweet</a></li>
+          <li><a href="https://xcancel.com/iamasoothsayer/status/1535494638391664641" target="_blank" rel="noopener">xcancel mirror</a></li>
+          <li><a href="https://x.com/iamasoothsayer" target="_blank" rel="noopener">the account</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>[B] THE OUTBREAK</h4>
+        <ul>
+          <li><a href="https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON599" target="_blank" rel="noopener">WHO DON 599</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/MV_Hondius_hantavirus_outbreak" target="_blank" rel="noopener">MV Hondius — Wikipedia</a></li>
+          <li><a href="https://polymarket.com/event/hantavirus-pandemic-in-2026" target="_blank" rel="noopener">Polymarket pandemic 2026</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>[C] THE WALL</h4>
+        <ul>
+          <li><a href="https://radiokp.ru/eto-budet-cherez-dva-tri-goda-globa-predrek-vozvraschenie-pandemii_nid20548_au1914au" target="_blank" rel="noopener">Globa · Radio KP 2020</a></li>
+          <li><a href="https://www.starhit.ru/novosti/virus-moschnee-kovida-i-voda-po-tsene-nefti-mehdi-ebragimi-vafa-o-sudbe-mira-v-blijayshie-10-let-283206/" target="_blank" rel="noopener">Mehdi · StarHit 2022</a></li>
+          <li><a href="https://ura.news/news/1053090694" target="_blank" rel="noopener">Tamara Globa · ura.news</a></li>
+          <li><a href="https://vm.ru/society/1005212-vanga-preduprezhdala-uchenye-rasskazali-ob-opasnyh-virusah-kotorye-mogut-ozhit-iz-za-tayaniya-lednikov" target="_blank" rel="noopener">Vanga · VM.ru</a></li>
+          <li><a href="https://zhuanlan.zhihu.com/p/1986752336928991055" target="_blank" rel="noopener">Zeng Shiqiang · Zhihu</a></li>
+          <li><a href="https://www.epochtimes.com/gb/26/2/3/n14689921.htm" target="_blank" rel="noopener">Knife-Sellers · Epoch Times</a></li>
+          <li><a href="https://lenta.ru/articles/2025/12/30/god-krasnoy-ognennoy-loshadi-2026/" target="_blank" rel="noopener">Red Fire Horse · Lenta</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>[D] CONTEXT &amp; ACADEMIA</h4>
+        <ul>
+          <li><a href="https://www.cnn.com/2022/06/10/us/five-things-june-10-trnd" target="_blank" rel="noopener">CNN · 10 Jun 2022</a></li>
+          <li><a href="https://news.un.org/en/story/2023/05/1136367" target="_blank" rel="noopener">UN · WHO ends COVID PHEIC</a></li>
+          <li><a href="https://www.academia.edu/38133320" target="_blank" rel="noopener">Krauss · Eye of Horus = Venus</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/Inanna" target="_blank" rel="noopener">Inanna — Wikipedia</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/Pythia" target="_blank" rel="noopener">Pythia — Wikipedia</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-mantra">we did not foretell.<br/>we recorded.</div>
+  <div class="footer-tag">$SOOTH · CC0 · NO ROADMAP · NO PROPHET · ONLY RECORD</div>
+  <div class="footer-legal">
+    not financial advice. not investment advice. not medical advice.<br/>
+    cultural lore. public record. memecoin.<br/>
+    © 2026 · the file is open · soothsayer.xyz
+  </div>
+</footer>
+
+<script src="script.js?v=2"></script>
+</body>
+</html>

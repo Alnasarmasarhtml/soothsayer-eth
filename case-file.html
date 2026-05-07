@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>$SOOTH · CASE FILE 599 · the soothsayer files</title>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Caveat:wght@500;700&family=Courier+Prime:wght@400;700&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Permanent+Marker&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+@page{size:A4;margin:0}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+:root{
+  --paper:#f1e5c8;--paper-2:#e8dcb6;--paper-3:#dfd1a0;
+  --ink:#18120e;--ink-2:#3a2a1e;
+  --red:#9c1623;--red-deep:#5a0a16;--red-pulse:#c8141a;
+  --blue:#2a3d5e;
+  --line:#7a6a4e;
+}
+html,body{
+  background:var(--paper);color:var(--ink);
+  font-family:'Old Standard TT',Georgia,serif;font-size:11pt;line-height:1.55;
+}
+.page{
+  width:210mm;min-height:297mm;
+  padding:16mm 18mm;
+  page-break-after:always;
+  position:relative;
+  background:
+    radial-gradient(ellipse at 80% 5%, rgba(120,80,30,.07), transparent 50%),
+    radial-gradient(ellipse at 0% 100%, rgba(60,40,20,.08), transparent 60%),
+    var(--paper);
+}
+.page:last-child{page-break-after:auto}
+.page::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background: repeating-linear-gradient(45deg, rgba(120,80,30,.018) 0 1px, transparent 1px 4px);
+}
+
+/* COVER */
+.cover{display:flex;flex-direction:column;justify-content:space-between;background:var(--paper-2)}
+.cover .top-marker{font-family:'Courier Prime',monospace;font-size:9pt;letter-spacing:.25em;color:var(--ink-2);text-transform:uppercase;border-top:3px double var(--ink);border-bottom:3px double var(--ink);padding:6px 0;text-align:center}
+.cover .case-num{font-family:'Abril Fatface',serif;font-size:140pt;line-height:.9;color:var(--red);margin-top:24mm;letter-spacing:-.04em;text-shadow:3px 3px 0 rgba(0,0,0,.05)}
+.cover .case-num small{font-size:24pt;display:block;letter-spacing:.4em;color:var(--ink);margin-top:8px}
+.cover h1{font-family:'Old Standard TT',serif;font-weight:700;font-size:42pt;line-height:1;color:var(--ink);letter-spacing:.02em;margin-top:16mm;text-transform:uppercase}
+.cover .deck{font-family:'Old Standard TT',serif;font-style:italic;font-size:14pt;line-height:1.4;color:var(--ink-2);max-width:140mm;margin-top:10mm}
+.cover .deck b{color:var(--red-deep);font-weight:700;font-style:normal}
+.cover .stamp{
+  position:absolute;top:30mm;right:14mm;
+  font-family:'Special Elite',monospace;font-size:13pt;letter-spacing:.18em;
+  color:var(--red);border:2px solid var(--red);padding:6px 14px;
+  transform:rotate(8deg);
+  box-shadow:2px 2px 0 rgba(0,0,0,.05);
+  text-transform:uppercase;
+}
+.cover .stamp-2{
+  position:absolute;bottom:60mm;left:18mm;
+  font-family:'Special Elite',monospace;font-size:10pt;letter-spacing:.18em;
+  color:var(--blue);border:2px solid var(--blue);padding:5px 12px;
+  transform:rotate(-4deg);
+  text-transform:uppercase;opacity:.85;
+}
+.cover .footer-cover{font-family:'Courier Prime',monospace;font-size:9pt;letter-spacing:.2em;color:var(--ink-2);margin-bottom:0;text-transform:uppercase}
+
+/* SHARED */
+.section-marker{
+  font-family:'Courier Prime',monospace;font-size:9pt;letter-spacing:.25em;
+  color:var(--red-deep);text-transform:uppercase;
+  border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);
+  padding:6px 0;margin-bottom:8mm;text-align:center;
+}
+.case-id{
+  font-family:'Special Elite',monospace;font-size:10pt;letter-spacing:.18em;
+  color:var(--red);text-transform:uppercase;margin-bottom:4mm;
+}
+.h-display{
+  font-family:'Old Standard TT',serif;font-weight:700;
+  font-size:32pt;line-height:1;color:var(--ink);
+  text-transform:uppercase;letter-spacing:.01em;margin-bottom:6mm;
+}
+.h-display em{font-style:italic;color:var(--red-deep)}
+
+/* THREAD page */
+.thread-intro{font-family:'Old Standard TT',serif;font-style:italic;font-size:11pt;color:var(--ink-2);max-width:160mm;margin-bottom:8mm;line-height:1.55}
+
+.tweet-card{
+  background:#fafaf6;border:1.5px solid var(--ink);
+  padding:6mm 8mm;margin-bottom:5mm;
+  break-inside:avoid;
+  box-shadow:2px 2px 0 rgba(0,0,0,.06);
+  position:relative;
+}
+.tweet-card::before{
+  content:"";position:absolute;top:-8px;left:8mm;
+  width:14mm;height:6mm;background:rgba(248,211,74,.6);
+  border:1px dashed rgba(120,80,30,.4);
+}
+.tw-num{
+  font-family:'Special Elite',monospace;font-size:9pt;letter-spacing:.15em;
+  color:var(--red);text-transform:uppercase;margin-bottom:3mm;
+  border-bottom:1px dashed var(--line);padding-bottom:2mm;
+}
+.tw-body{font-family:'Old Standard TT',serif;font-size:12pt;line-height:1.55;color:var(--ink);white-space:pre-wrap}
+.tw-body i{color:var(--red-deep);font-style:italic}
+.tw-image-note{font-family:'Courier Prime',monospace;font-size:9pt;color:var(--ink-2);background:var(--paper-3);padding:3px 8px;margin-bottom:3mm;display:inline-block;letter-spacing:.05em}
+.tw-link{font-family:'Courier Prime',monospace;font-size:9pt;color:var(--blue);background:rgba(42,61,94,.07);padding:2px 6px;display:inline-block;margin-top:3px}
+
+/* LETTER page */
+.letter-mast{text-align:center;margin-bottom:14mm;padding-bottom:8mm;border-bottom:3px double var(--ink)}
+.letter-mast .from{font-family:'Courier Prime',monospace;font-size:10pt;letter-spacing:.3em;color:var(--ink-2);text-transform:uppercase;margin-bottom:6mm}
+.letter-mast h2{font-family:'Old Standard TT',serif;font-weight:700;font-size:36pt;line-height:1;color:var(--ink);text-transform:uppercase;letter-spacing:.01em}
+.letter-mast .vol{font-family:'Special Elite',monospace;font-size:12pt;letter-spacing:.2em;color:var(--red);margin-top:5mm;text-transform:uppercase}
+
+.letter-body{
+  font-family:'Old Standard TT',serif;font-size:11pt;line-height:1.7;
+  text-align:justify;hyphens:auto;
+}
+.letter-body p{margin-bottom:5mm;text-indent:0}
+.letter-body p + p{text-indent:6mm}
+.letter-body p.no-indent{text-indent:0}
+.letter-body h3{
+  font-family:'Old Standard TT',serif;font-weight:700;
+  font-size:14pt;text-transform:uppercase;letter-spacing:.06em;
+  margin:8mm 0 4mm;color:var(--ink);
+  border-bottom:1px solid var(--line);padding-bottom:2mm;
+}
+.letter-body em{color:var(--red-deep);font-style:italic;font-weight:500}
+.letter-body i{color:var(--ink);font-style:italic}
+.letter-body b{color:var(--red-deep);font-weight:700}
+.letter-body .pull{
+  font-style:italic;color:var(--red-deep);
+  font-size:13pt;line-height:1.5;
+  border-left:3px solid var(--red);
+  padding:3mm 6mm;margin:6mm 0;
+  background:var(--paper-3);
+  break-inside:avoid;
+}
+.letter-body .verse{
+  font-family:'Old Standard TT',serif;font-style:italic;
+  font-size:11pt;line-height:1.5;
+  background:var(--paper-3);
+  padding:4mm 6mm;margin:4mm 0;
+  border:1px dashed var(--line);
+  break-inside:avoid;
+  white-space:pre-line;
+}
+.letter-sign{
+  margin-top:10mm;text-align:right;
+  font-family:'Courier Prime',monospace;font-size:10pt;letter-spacing:.2em;
+  color:var(--ink-2);text-transform:uppercase;
+}
+
+/* CALL page */
+.call-card{
+  background:var(--paper-3);border:2px solid var(--ink);
+  padding:8mm 10mm;margin-bottom:8mm;
+  position:relative;
+  box-shadow:3px 3px 0 rgba(0,0,0,.06);
+  break-inside:avoid;
+}
+.call-card::before{
+  content:"OPEN CALL";position:absolute;top:-12px;right:8mm;
+  font-family:'Special Elite',monospace;font-size:10pt;letter-spacing:.2em;
+  color:var(--red);background:var(--paper);padding:2px 10px;
+  border:2px solid var(--red);
+}
+.call-card h3{font-family:'Old Standard TT',serif;font-weight:700;font-size:18pt;color:var(--ink);text-transform:uppercase;letter-spacing:.04em;margin-bottom:4mm}
+.call-card .lbl{font-family:'Courier Prime',monospace;font-size:9pt;letter-spacing:.2em;color:var(--red-deep);text-transform:uppercase;margin-bottom:3mm}
+.call-card pre{font-family:'Courier Prime',monospace;font-size:10pt;line-height:1.55;white-space:pre-wrap;color:var(--ink)}
+.call-card ul{margin:3mm 0;padding-left:8mm}
+.call-card li{margin-bottom:2mm;font-family:'Old Standard TT',serif;font-size:11pt}
+.call-card .accept{color:var(--red-deep)}
+.call-card .reject{color:var(--ink-2);font-style:italic}
+
+/* SOURCES page */
+.sources-list{
+  font-family:'Courier Prime',monospace;font-size:9pt;line-height:1.7;
+  columns:2;column-gap:8mm;column-rule:1px dashed var(--line);
+}
+.sources-list .src-item{break-inside:avoid;margin-bottom:3mm}
+.sources-list .src-tag{font-weight:700;color:var(--red-deep)}
+.sources-list a{color:var(--blue);word-break:break-all}
+
+/* PAGE FOOTER */
+.pfoot{
+  position:absolute;bottom:8mm;left:18mm;right:18mm;
+  display:flex;justify-content:space-between;
+  font-family:'Courier Prime',monospace;font-size:8pt;letter-spacing:.18em;color:var(--ink-2);text-transform:uppercase;
+  border-top:1px solid var(--line);padding-top:3mm;
+}
+
+/* MANTRA */
+.mantra-block{
+  margin:14mm 0;text-align:center;
+  font-family:'Old Standard TT',serif;font-style:italic;
+  font-size:24pt;line-height:1.2;color:var(--red-deep);
+}
+</style>
+</head>
+<body>
+
+<!-- ============ COVER ============ -->
+<section class="page cover">
+  <div>
+    <div class="top-marker">◆ THE FILE · VOL. I · 8 MAY 2026 ◆ INTERNAL DOCUMENT ◆ DO NOT DUPLICATE ◆</div>
+    <div class="stamp">CONFIDENTIAL</div>
+    <div class="case-num">599<small>CASE FILE</small></div>
+    <h1>The<br/>Soothsayer<br/>Files</h1>
+    <p class="deck">An anonymous English-language account posted four times in a single week of June 2022 and went silent. <b>One post named the next plague.</b> Four years later the cruise ship docked.<br/><br/>This is the file we built around it.</p>
+  </div>
+  <div>
+    <div class="stamp-2">VERIFIED · GROK</div>
+    <div class="footer-cover">$SOOTH · the fifth tablet · ETH · soothsayer.xyz · we did not foretell. we recorded.</div>
+  </div>
+</section>
+
+<!-- ============ THE THREAD ============ -->
+<section class="page">
+  <div class="section-marker">◆ I · THE THREAD · X / TWITTER · DAY-0 LAUNCH ARTIFACT ◆</div>
+  <div class="case-id">CASE 599 · VOL. I · §I</div>
+  <h2 class="h-display">THE EIGHT-WORD<br/><em>PROPHECY</em></h2>
+  <p class="thread-intro">Fourteen tweets. Drop on day zero. Use as one continuous thread on the project's main account; let other accounts quote-tweet individual beats. Every claim is sourced in §IV.</p>
+
+  <article class="tweet-card">
+    <div class="tw-num">— TWEET 1 / 14 —</div>
+    <div class="tw-image-note">[image: screenshot of @iamasoothsayer's prediction tweet]</div>
+    <div class="tw-body">in june 2022 an anonymous account posted four words.
+
+went silent.
+
+four years later, the cruise ship docked.
+
+🧵</div>
+  </article>
+
+  <article class="tweet-card">
+    <div class="tw-num">— TWEET 2 / 14 —</div>
+    <div class="tw-body">the account: <i>@iamasoothsayer</i>.
+
+four posts. one week of june 2022.
+bio: "reads the future."
+silent ever since.
+
+the post that matters:
+<i>"2023: Corona ended
+2026: Hantavirus"</i></div>
+  </article>
+
+  <article class="tweet-card">
+    <div class="tw-num">— TWEET 3 / 14 —</div>
+    <div class="tw-image-note">[image: CNN "five things" June 10 2022 screenshot]</div>
+    <div class="tw-body">june 10, 2022 — the day @iamasoothsayer made his first post —
+the U.S. formally lifted COVID international travel-testing rules.
+
+first day "corona ended" became bureaucratic reality.
+
+11 months before WHO would say it.</div>
+  </article>
+
+  <article class="tweet-card">
+    <div class="tw-num">— TWEET 4 / 14 —</div>
+    <div class="tw-body">the prediction came the next morning.
+
+8:30 AM UTC.
+269,414 likes.
+61,433 retweets.
+
+GROK confirmed in-thread: <i>unedited since 2022.</i></div>
+  </article>
+
+  <div class="pfoot"><span>$SOOTH · CASE 599 · the file</span><span>page 02</span></div>
+</section>
+
+<section class="page">
+  <article class="tweet-card">
+    <div class="tw-num">— TWEET 5 / 14 —</div>
+    <div class="tw-body"><i>2023: corona ended.</i> ✓
+
+May 5, 2023 — WHO Director-General Tedros Adhanom Ghebreyesus formally declared the end of the COVID-19 PHEIC.
+
+the soothsayer's first half landed inside the official window.</div>
+  </article>
+
+  <article class="tweet-card">
+    <div class="tw-num">— TWEET 6 / 14 —</div>
+    <div class="tw-body"><i>2026: hantavirus.</i> ✓
+
+May 2, 2026 — WHO Disease Outbreak News No. 599:
+multi-country hantavirus cluster aboard MV Hondius.
+Andes strain. ~40% case fatality.
+
+the second half also landed.</div>
+  </article>
+
+  <article class="tweet-card">
+    <div class="tw-num">— TWEET 7 / 14 —</div>
+    <div class="tw-body">but he was not alone.
+
+across three continents, named voices put a marker on 2026 in advance.
+
+not coincidence.
+not consensus.
+not collusion.
+
+<i>record.</i></div>
+  </article>
+
+  <article class="tweet-card">
+    <div class="tw-num">— TWEET 8 / 14 —</div>
+    <div class="tw-body"><i>RUSSIA · 2020 — Pavel Globa</i>, national radio:
+
+<i>"comparable to the Spanish flu epidemic of 1918–1919."</i>
+
+russia's most-cited astrologer. on tape. five years before.
+
+<span class="tw-link">[link: radiokp.ru]</span></div>
+  </article>
+
+  <article class="tweet-card">
+    <div class="tw-num">— TWEET 9 / 14 —</div>
+    <div class="tw-body"><i>IRAN/RUSSIA · 2022 — Mehdi Ebragimi Vafa</i>, Battle of Psychics winner:
+
+<i>"a new virus will appear, more powerful than COVID-19."</i>
+
+<span class="tw-link">[link: starhit.ru]</span></div>
+  </article>
+
+  <article class="tweet-card">
+    <div class="tw-num">— TWEET 10 / 14 —</div>
+    <div class="tw-body"><i>TAIWAN · 2018 — 曾仕強 Zeng Shiqiang</i>, I Ching scholar:
+
+<i>"未来5年是人类大量死亡的阶段。上天的第一个工具叫做瘟疫。"</i>
+
+"the next 5 years are mass human death. heaven's first tool is plague."
+
+he died in 2018. the prediction outlived him.</div>
+  </article>
+
+  <div class="pfoot"><span>$SOOTH · CASE 599 · the file</span><span>page 03</span></div>
+</section>
+
+<section class="page">
+  <article class="tweet-card">
+    <div class="tw-num">— TWEET 11 / 14 —</div>
+    <div class="tw-body"><i>BULGARIA · pre-1996 — Baba Vanga</i>, recorded by biographer:
+
+<i>"frozen virus particles in glaciers will be released by climate change and cause a new pandemic."</i>
+
+andes strain is rodent-borne.
+from south america.
+30 years dead. still on the wall.</div>
+  </article>
+
+  <article class="tweet-card">
+    <div class="tw-num">— TWEET 12 / 14 —</div>
+    <div class="tw-body">we checked the rest of the internet.
+
+× no substack named hantavirus + 2026 before may 2026.
+× no prediction market opened a hantavirus contract before may 4, 2026.
+× no mainstream anglo astrologer named the disease.
+
+<i>@iamasoothsayer is alone — in english.</i></div>
+  </article>
+
+  <article class="tweet-card">
+    <div class="tw-num">— TWEET 13 / 14 —</div>
+    <div class="tw-body">we are not asserting causation.
+we are not alleging a leak.
+we are not crediting any individual with foreknowledge.
+
+<i>we are recording — in public, with sources, with stamps — that the year was named.</i></div>
+  </article>
+
+  <article class="tweet-card">
+    <div class="tw-num">— TWEET 14 / 14 —</div>
+    <div class="tw-body"><i>CASE FILE 599 IS OPEN.</i>
+
+nine voices on the wall. all sourced. all dated.
+the soothsayer is silent. the wall is loud.
+
+$SOOTH on Ethereum.
+CA: [paste]
+soothsayer.xyz
+
+—
+<i>we did not foretell.
+we recorded.</i></div>
+  </article>
+
+  <div class="pfoot"><span>$SOOTH · CASE 599 · the file</span><span>page 04</span></div>
+</section>
+
+<!-- ============ THE LETTER ============ -->
+<section class="page">
+  <div class="letter-mast">
+    <div class="from">— from the file editor —</div>
+    <h2>Letter from<br/>The File</h2>
+    <div class="vol">Vol. I · Case 599 · 8 May 2026</div>
+  </div>
+
+  <div class="letter-body">
+    <p class="no-indent">The post is eight words long.</p>
+
+    <p class="no-indent">It was written on the morning of June 11, 2022, at 8:30 AM Coordinated Universal Time, by an anonymous user of an English-language platform that, at the time, was still called Twitter. The account that posted it had been opened the day before. It had a profile picture of a hooded figure, a bio that read "reads the future," and three small symbols decorating its profile: an eight-pointed star, an upside-down peace sign, and the Eye of Horus.</p>
+
+    <p>The post said: <em>"2023: Corona ended. 2026: Hantavirus."</em></p>
+
+    <p>That was the entire post. The account, calling itself "soothsayer" with the handle <i>@iamasoothsayer</i>, would go on to make three more posts in the seven days that followed — short aphorisms, the kind of generic emotional epigram one would expect from a teenage Tumblr blog. <em>"Everyone is happy today and weep tomorrow." "Love is jealous with limitations."</em> And then, on June 17, 2022, the account fell silent.</p>
+
+    <p>It has not posted since.</p>
+
+    <p>Four years later — May 2, 2026 — the World Health Organization issued its 599th Disease Outbreak News bulletin of the post-Ebola era. The bulletin reported a multi-country cluster of hantavirus infections traced to a single cruise ship, the MV Hondius, which had departed Ushuaia, Argentina on March 20 and was now anchored off Cabo Verde with five confirmed cases, three dead, and 146 passengers from 23 countries waiting to be told whether they would be allowed to disembark. The strain was Andes hantavirus — rare, rodent-borne, and, atypically for hantaviruses, capable of human-to-human transmission. The case fatality rate hovered around forty percent.</p>
+
+    <p>The day the WHO bulletin was published, somebody — we believe it was a man named Jordan Crowder, posting on the platform now called X — surfaced the @iamasoothsayer post for the first time in four years. Within seventy-two hours it had been quote-tweeted by a Super Smash Bros. Melee professional with a million followers, by an aggregator account with a hundred thousand more, by Polymarket, by a Spanish constitutional law account, and by Marjorie Taylor Greene. The retweet count climbed past 60,000. The replies surpassed 268,000. Grok, the AI assistant native to the platform, confirmed in-thread that the post had not been edited since June 2022. We have, for the moment, no reason to dispute this.</p>
+
+    <p class="pull">This file is not about who @iamasoothsayer is. We do not know. We have not tried to find out.</p>
+
+    <p>The account has the digital signature of a Filipino aphorism account from the late Twitter-bot era; the cadence of the non-prediction posts ("Love is jealous with limitations") fits that pattern almost exactly. It is entirely possible that the account belongs to a then-teenager who heard the word "hantavirus" in passing — perhaps from the 2020 Chinese state-media tweet that briefly trended after a fatal hantavirus case was reported in Yunnan — and threw it into a list of bad-vibe future events the way one might throw a dart.</p>
+
+    <p>It is also possible that he did not.</p>
+
+  </div>
+  <div class="pfoot"><span>$SOOTH · CASE 599 · the letter</span><span>page 05</span></div>
+</section>
+
+<section class="page">
+  <div class="letter-body">
+    <p class="no-indent">We have spent the last seventy-two hours trying to determine, in the most general possible terms, <b>how alone the soothsayer is</b>. That is the only question this file claims to answer. We have searched, in English, in Russian, in Mandarin, in Korean, in Japanese, in Vietnamese, in Thai, and in Hindi. We have read Substacks, prediction markets, astrology blogs, conspiracy boards, esoteric forums, archive.org snapshots, fact-checks, and folk-prophecy press. We have looked at named astrologers, anonymous chatroom predictions, regulatory filings, and the published archives of every major Anglo-American epidemiology newsletter we know of. The findings are, in our view, more interesting than the soothsayer himself.</p>
+
+    <h3>The Wall</h3>
+
+    <p class="no-indent">There are, on the public record, <b>nine independent voices</b> that put a marker on 2026 as the year of plague before 2026 began. We did not curate this list ideologically. We did not pick the famous ones and leave the rest. Each entry below is verifiable in indexed media. Each has a date that pre-dates May 2026. Each names either the year, the disease, or both.</p>
+
+    <p><b>Pavel Globa.</b> May 7, 2020. Russia's most-cited living astrologer, in an interview on Radio Komsomolskaya Pravda, said: <em>"This is not the current coronavirus, where 2% die. If we don't prepare seriously, it will be comparable to the Spanish flu epidemic of 1918–1919."</em> In a separate publication, Globa told his readers that 2026 would be a year of "sea conflicts" and warned that "straits and channels will gain much greater significance." The MV Hondius is a ship.</p>
+
+    <p><b>Mehdi Ebragimi Vafa.</b> October 18, 2022. Iranian-Russian medium, winner of Russia's <i>Battle of Psychics</i> television show, in an interview with the celebrity outlet StarHit: <em>"A new virus will appear, more powerful than what we call COVID-19. The infection will strike nerve cells, people will go mad."</em> Mehdi has, like all media psychics, also predicted things that did not happen. His track record is not the point. His record is.</p>
+
+    <p><b>Tamara Globa.</b> December 23, 2024. Russian astrologer, author of multiple bestselling almanacs, in StarHit: <em>"2025 and 2026 are pivotal years. The whole world will be reshaped."</em> In a separate January 2026 interview with Ura.News and Cxid.info, she went further: <em>"May 2026 will overturn everything."</em> The Hondius cluster was reported on the second of May.</p>
+
+    <p><b>Baba Vanga.</b> Bulgarian seer, died 1996. Her catalog of predictions is recorded by her biographer Krasimira Stoyanova and circulates almost exclusively through Russian-language press. The most-quoted relevant lines: <em>"Frozen virus particles trapped in glaciers will be released by climate change and cause a new pandemic"</em> and, for 2026 specifically, <em>"One part of the world will freeze, another will burn."</em> Andes hantavirus is rodent-borne and originates in South America.</p>
+
+    <p><b>Zeng Shiqiang (曾仕強).</b> Taiwanese I Ching scholar, died 2018. Lectures still circulate widely on the Chinese internet. The line that recurs in every transcription:</p>
+
+    <div class="verse">未来5年是人类大量死亡的阶段。上天的第一个工具叫做瘟疫。这种瘟疫传播很快，无药可救。
+
+— "The next five years are a phase of mass human death. Heaven's first tool is plague. It spreads fast. There is no cure."</div>
+
+    <p>Zeng also framed 2026 as a 丙午 year — the Red Horse year — within his cosmological reading of the Li-Fire Ninth Cycle (离火九运) that began in 2024.</p>
+  </div>
+  <div class="pfoot"><span>$SOOTH · CASE 599 · the letter</span><span>page 06</span></div>
+</section>
+
+<section class="page">
+  <div class="letter-body">
+    <p class="no-indent"><b>The 赊刀人 (the Knife-Sellers).</b> A Chinese folk-prophecy tradition associated with itinerant knife sellers who, by reputation, leave behind verses that name the conditions of their return. The verse currently in circulation, published in Epoch Times on February 3, 2026 and reproduced by half a dozen Chinese outlets since:</p>
+
+    <div class="verse">二六红马血火喷
+西洋暗无天日
+南洋米贵如珍珠
+东洋遍地是枯骨
+
+— "2026 Red Horse year, blood and fire spew. The Western Ocean is darkened sunless. In the South Seas, rice is precious as pearls. The Eastern lands are strewn with bleached bones."</div>
+
+    <p><b>The Tui Bei Tu (推背圖).</b> A 7th-century Chinese imperial prophecy book, attributed to Li Chunfeng and Yuan Tiangang. Image XLI of LX, currently being read against 2026: <em>"Heaven and earth go dark. Plants multiply unchecked. Yin and Yang reverse. Earth above, sun below."</em> Thirteen centuries of margin to read into.</p>
+
+    <p><b>The Year of the Red Fire Horse (丙午).</b> A folk-astrology trope that 2026 is a 丙午 year — the Red Fire Horse, considered traditionally inauspicious in Chinese, Japanese, and Korean almanacs. Major Russian outlets — Lenta, RIA, Komsomolskaya Pravda — pre-published 2026 framings in late 2025 noting that the year would open with a solar eclipse on February 17 and that, in folk reading, "solar eclipses traditionally activate viruses." The articles ran four to six months before the Hondius docked.</p>
+
+    <p><b>@iamasoothsayer.</b> June 11, 2022. <em>The only one who named the disease.</em></p>
+
+    <p>That is the wall. Nine entries. Three continents. Six centuries of tradition collapsed into one calendar year.</p>
+
+    <h3>The Absence</h3>
+
+    <p class="no-indent">The far stranger finding is the negative space. We searched for any Substack post, prediction market contract, mainstream Anglo-American astrologer's annual forecast, journalist's column, or epidemiologist's longform that named hantavirus and 2026 by name before May 2026. We found nothing.</p>
+
+    <p>The earliest Polymarket contract on a 2026 hantavirus pandemic was opened on May 4, 2026 — two days after the WHO bulletin. The earliest Substack post by a credentialed epidemiologist (Jeremy Faust, "Inside Medicine") landed the same day. Eric Topol, Katelyn Jetelina, Kristen Panthagani, Bret Weinstein, Marty Makary, Vinay Prasad, Igor Chudov, Brownstone Institute — none had posted on hantavirus risk before May 2026. Chani Nicholas, Susan Miller, Jessica Adams — none had named the disease.</p>
+
+    <p class="pull">In English, on the indexable internet, the @iamasoothsayer post is the only public, dated, pre-outbreak hantavirus + 2026 marker we were able to find. That is the entire case.</p>
+  </div>
+  <div class="pfoot"><span>$SOOTH · CASE 599 · the letter</span><span>page 07</span></div>
+</section>
+
+<section class="page">
+  <div class="letter-body">
+    <h3>What this file is, and isn't</h3>
+
+    <p class="no-indent">We do not assert causation. We do not allege a leak. We do not credit any individual with foreknowledge. We do not name a perpetrator, because there is no perpetrator we can responsibly name and most attempts to do so — including the recurring viral claim that Bill Gates "predicted hantavirus" in 2021 — collapse on contact with a fact-checker.</p>
+
+    <p>What we are doing is recording. We are recording, in public, with sources, with stamps, that nine independent voices on three continents named 2026 as a year of plague before 2026 began, and that one of those voices, an account that has spoken only four times in its life, named the disease.</p>
+
+    <p>The simplest explanation for any individual entry on the wall is coincidence, survivorship bias, or post-hoc reading-in. The simplest explanation for the <em>aggregate</em> — nine entries across English, Russian, Bulgarian, Mandarin, Iranian-Russian, and Tang-dynasty Chinese folk traditions — is also coincidence, survivorship bias, or post-hoc reading-in. We acknowledge this.</p>
+
+    <p>The interesting thing is not that we have proven a conspiracy. We have not. The interesting thing is that the simplest explanation requires you to believe in a fairly large coincidence, and that the next-simplest explanation requires you to believe something stranger about how the year 2026 came to be marked, in advance, by people who had no apparent way of communicating with one another.</p>
+
+    <p>You may believe whichever you like.</p>
+
+    <p class="pull">The file is open. The wall is on the website. The sources are linked. The fifth tablet is on Ethereum.</p>
+
+    <div class="letter-sign">
+      — THE FILE EDITOR<br/>
+      8 May 2026
+    </div>
+  </div>
+
+  <div class="mantra-block">
+    we did not foretell.<br/>
+    we recorded.
+  </div>
+
+  <div class="pfoot"><span>$SOOTH · CASE 599 · the letter</span><span>page 08</span></div>
+</section>
+
+<!-- ============ THE 9TH VOICE OPEN CALL ============ -->
+<section class="page">
+  <div class="section-marker">◆ III · THE 9TH VOICE · OPEN CALL · COMMUNITY UGC ENGINE ◆</div>
+  <div class="case-id">CASE 599 · VOL. I · §III</div>
+  <h2 class="h-display">FIND US<br/><em>THE 10TH VOICE.</em></h2>
+  <p class="thread-intro">The wall currently lists nine voices. The internet is large and we are small. If you can find a tenth, we publish it on the wall and credit you. The file does not pay in money. It pays in record.</p>
+
+  <div class="call-card">
+    <h3>X / SHORT FORM</h3>
+    <div class="lbl">— PASTE INTO THE PROJECT'S MAIN ACCOUNT —</div>
+    <pre>we left a slot empty on the wall.
+
+if you can find a tenth voice — a public, dated, pre-2026 hantavirus + 2026 prediction with a source URL — submit it.
+
+we will publish on the wall and credit you.
+
+[link: soothsayer.xyz/submit]
+
+#CASE599</pre>
+  </div>
+
+  <div class="call-card">
+    <h3>TELEGRAM / EXTENDED</h3>
+    <div class="lbl">— PASTE INTO THE TG CHANNEL —</div>
+    <pre>━━━━━━━━━━━━━━━━━━━━━━━━━━━
+◆ THE 9TH VOICE · OPEN CALL ◆
+━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+The wall currently lists nine voices. We have not finished looking. The internet is large and we are small.
+
+If you can find a TENTH voice — a public, dated, pre-2026 prediction that names hantavirus AND 2026 — we will:
+
+1. publish it on the wall
+2. credit you (handle, channel, blog — your call)
+3. archive your submission to the file's permanent record</pre>
+    <div class="lbl" style="margin-top:5mm">CRITERIA — IN ORDER OF IMPORTANCE</div>
+    <ul>
+      <li class="accept">◆ <b>public</b> — the source must be findable by a journalist</li>
+      <li class="accept">◆ <b>dated</b> — verifiable timestamp before May 2 2026</li>
+      <li class="accept">◆ <b>named</b> — must explicitly name BOTH hantavirus AND a 2026 / Year-of-the-Red-Horse-adjacent date</li>
+      <li class="accept">◆ <b>sourced</b> — submit the URL, not a screenshot</li>
+    </ul>
+    <div class="lbl" style="margin-top:4mm">WE WILL NOT ACCEPT</div>
+    <ul>
+      <li class="reject">× post-hoc YouTube videos uploaded after May 2026</li>
+      <li class="reject">× generic "next pandemic" predictions that don't name the disease</li>
+      <li class="reject">× claims you cannot link to</li>
+      <li class="reject">× anything fabricated or AI-generated</li>
+    </ul>
+  </div>
+
+  <div class="call-card">
+    <h3>WEBSITE FORM · /submit</h3>
+    <div class="lbl">— FOR THE SOOTHSAYER.XYZ SUBMIT PAGE —</div>
+    <pre>[H1] Submit a Voice
+[sub] We're looking for the 10th voice. Public record only.
+
+[label] Source URL
+[input · required · type=url]
+
+[label] What did they say (verbatim quote, native language ok)
+[textarea · required]
+
+[label] Date of publication (YYYY-MM-DD)
+[input · required · type=date · max=2026-05-02]
+
+[label] Translation (if not in English)
+[textarea · optional]
+
+[label] Your handle / how to credit (or "anonymous")
+[input · optional]
+
+[submit] FILE THE VOICE
+
+[footer] We review every submission. If we publish, we credit. If we reject, we tell you why. The file does not lie.</pre>
+  </div>
+
+  <div class="pfoot"><span>$SOOTH · CASE 599 · the call</span><span>page 09</span></div>
+</section>
+
+<!-- ============ EVIDENCE LOCKER / SOURCES ============ -->
+<section class="page">
+  <div class="section-marker">◆ IV · EVIDENCE LOCKER · PUBLIC RECORD INDEX ◆</div>
+  <div class="case-id">CASE 599 · VOL. I · §IV</div>
+  <h2 class="h-display">SOURCES<em>.</em></h2>
+
+  <div class="sources-list">
+    <div class="src-item"><span class="src-tag">[A1]</span> The prediction tweet — <a>x.com/iamasoothsayer/status/1535494638391664641</a></div>
+    <div class="src-item"><span class="src-tag">[A2]</span> The account — <a>x.com/iamasoothsayer</a></div>
+    <div class="src-item"><span class="src-tag">[A3]</span> XCancel mirror — <a>xcancel.com/iamasoothsayer/status/1535494638391664641</a></div>
+    <div class="src-item"><span class="src-tag">[B1]</span> WHO Disease Outbreak News No. 599 — <a>who.int/emergencies/disease-outbreak-news/item/2026-DON599</a></div>
+    <div class="src-item"><span class="src-tag">[B2]</span> MV Hondius outbreak — Wikipedia — <a>en.wikipedia.org/wiki/MV_Hondius_hantavirus_outbreak</a></div>
+    <div class="src-item"><span class="src-tag">[B3]</span> Polymarket · pandemic 2026 — <a>polymarket.com/event/hantavirus-pandemic-in-2026</a></div>
+    <div class="src-item"><span class="src-tag">[B4]</span> CDC statement — <a>cdc.gov/media/releases/2026-hantavirus-confirmed-cruise-ship.html</a></div>
+    <div class="src-item"><span class="src-tag">[C1]</span> Pavel Globa · Radio Komsomolskaya Pravda · 2020 — <a>radiokp.ru/eto-budet-cherez-dva-tri-goda-globa-predrek-vozvraschenie-pandemii_nid20548_au1914au</a></div>
+    <div class="src-item"><span class="src-tag">[C2]</span> Pavel Globa · 2026 maritime — <a>predskazanie.ru/publications/articles/0410.php</a></div>
+    <div class="src-item"><span class="src-tag">[C3]</span> Mehdi Ebragimi Vafa · StarHit · 2022 — <a>starhit.ru/novosti/virus-moschnee-kovida-i-voda-po-tsene-nefti-mehdi-ebragimi-vafa-o-sudbe-mira-v-blijayshie-10-let-283206</a></div>
+    <div class="src-item"><span class="src-tag">[C4]</span> Tamara Globa · "May 2026 will overturn" — <a>ura.news/news/1053090694</a></div>
+    <div class="src-item"><span class="src-tag">[C5]</span> Tamara Globa · cxid.info — <a>cxid.info/199137.html</a></div>
+    <div class="src-item"><span class="src-tag">[C6]</span> Baba Vanga · frozen virus — <a>vm.ru/society/1005212-vanga-preduprezhdala</a></div>
+    <div class="src-item"><span class="src-tag">[C7]</span> Baba Vanga · 2026 RIA — <a>ria.ru/20251114/vanga-2054704184.html</a></div>
+    <div class="src-item"><span class="src-tag">[C8]</span> Zeng Shiqiang · Zhihu — <a>zhuanlan.zhihu.com/p/1986752336928991055</a></div>
+    <div class="src-item"><span class="src-tag">[C9]</span> The Knife-Sellers · Epoch Times — <a>epochtimes.com/gb/26/2/3/n14689921.htm</a></div>
+    <div class="src-item"><span class="src-tag">[C10]</span> Year of the Red Fire Horse · Lenta — <a>lenta.ru/articles/2025/12/30/god-krasnoy-ognennoy-loshadi-2026</a></div>
+    <div class="src-item"><span class="src-tag">[C11]</span> Year of the Red Fire Horse · RIA — <a>ria.ru/20251106/kakoe-zhivotnoe-budet-simvolom-2026-goda-2053161109.html</a></div>
+    <div class="src-item"><span class="src-tag">[D1]</span> CNN · 10 June 2022 — <a>cnn.com/2022/06/10/us/five-things-june-10-trnd</a></div>
+    <div class="src-item"><span class="src-tag">[D2]</span> UN · WHO ends COVID PHEIC — <a>news.un.org/en/story/2023/05/1136367</a></div>
+    <div class="src-item"><span class="src-tag">[E1]</span> Jeremy Faust · Inside Medicine — <a>insidemedicine.substack.com/p/hantavirus-landing-page</a></div>
+    <div class="src-item"><span class="src-tag">[E2]</span> Katelyn Jetelina · Your Local Epidemiologist — <a>yourlocalepidemiologist.substack.com/p/hantavirus-situation-update-and-getting</a></div>
+    <div class="src-item"><span class="src-tag">[E3]</span> Kristen Panthagani · You Can Know Things — <a>youcanknowthings.substack.com/p/a-hantavirus-update</a></div>
+    <div class="src-item"><span class="src-tag">[F1]</span> Free Press Journal · viral coverage — <a>freepressjournal.in/viral/hantavirus-prediction-tweet-from-2022-goes-viral</a></div>
+    <div class="src-item"><span class="src-tag">[F2]</span> UNILAD Tech — <a>uniladtech.com/social-media/hantavirus-outbreak-2026-tweet-predict-2022-127912-20260507</a></div>
+    <div class="src-item"><span class="src-tag">[F3]</span> Daily Beast · MAGA conspiracies — <a>thedailybeast.com/maga-melts-down-with-rat-virus-conspiracies</a></div>
+    <div class="src-item"><span class="src-tag">[F4]</span> Snopes fact-check — <a>snopes.com/fact-check/cruise-ship-hantavirus-rare</a></div>
+    <div class="src-item"><span class="src-tag">[F5]</span> NewsX · Bill Gates myth debunked — <a>newsx.com/world/hantavirus-updates-did-bill-gates-predict-hantavirus</a></div>
+    <div class="src-item"><span class="src-tag">[G1]</span> Krauss · Eye of Horus = Venus — <a>academia.edu/38133320</a></div>
+    <div class="src-item"><span class="src-tag">[G2]</span> Inanna — <a>en.wikipedia.org/wiki/Inanna</a></div>
+    <div class="src-item"><span class="src-tag">[G3]</span> Nergal — <a>en.wikipedia.org/wiki/Nergal</a></div>
+    <div class="src-item"><span class="src-tag">[G4]</span> Pythia — <a>en.wikipedia.org/wiki/Pythia</a></div>
+  </div>
+
+  <div class="mantra-block" style="margin-top:14mm">
+    we did not foretell.<br/>
+    we recorded.
+  </div>
+
+  <div class="pfoot"><span>$SOOTH · CASE 599 · the file · end</span><span>page 10</span></div>
+</section>
+
+</body>
+</html>

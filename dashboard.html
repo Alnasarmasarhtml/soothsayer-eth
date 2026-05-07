@@ -1,0 +1,767 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>$SOOTH · CASE FILE 599 · production reference</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Caveat:wght@500;700&family=Courier+Prime:wght@400;700&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Permanent+Marker&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f4ebd7;--paper-2:#ede0c4;--paper-3:#e3d3a4;
+  --ink:#18120e;--ink-2:#3a2a1e;--line:#7a6a4e;--line-soft:#b8a06a;
+  --red:#d11a2a;--red-deep:#7a0a16;--red-pulse:#ff2a3d;
+  --blue:#2a3d5e;--yellow:#f8d34a;--green:#4a7d3a;
+  --shadow:rgba(0,0,0,.18);
+  --ff-news:'Old Standard TT','Times New Roman',serif;
+  --ff-display:'Abril Fatface',Georgia,serif;
+  --ff-mono:'Courier Prime','Courier New',monospace;
+  --ff-marker:'Permanent Marker',cursive;
+  --ff-hand:'Caveat',cursive;
+  --ff-typewriter:'Special Elite','Courier Prime',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{
+  background:radial-gradient(ellipse at 70% 0%,rgba(184,160,106,.25),transparent 50%),radial-gradient(ellipse at 0% 100%,rgba(122,106,78,.2),transparent 60%),#c9a77e;
+  color:var(--ink);font-family:var(--ff-news);font-size:15px;line-height:1.55;min-height:100vh;
+}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;background:repeating-linear-gradient(45deg,rgba(120,80,30,.02) 0 2px,transparent 2px 6px),radial-gradient(circle at 20% 30%,rgba(120,80,30,.04),transparent 30%),radial-gradient(circle at 80% 70%,rgba(120,80,30,.05),transparent 35%)}
+a{color:var(--red-deep);text-decoration:underline}
+a:hover{color:var(--red)}
+header{position:sticky;top:0;z-index:10;background:linear-gradient(180deg,var(--paper),var(--paper-2));border-bottom:3px double var(--ink);padding:18px 28px;box-shadow:0 4px 0 rgba(0,0,0,.08)}
+header h1{font-family:var(--ff-display);font-size:32px;letter-spacing:.04em;color:var(--ink);line-height:1}
+header h1 b{color:var(--red-deep)}
+header .sub{font-family:var(--ff-typewriter);font-size:11px;letter-spacing:.18em;color:var(--ink-2);margin-top:6px;text-transform:uppercase}
+.search{margin-top:12px;width:100%;max-width:520px;background:var(--paper-3);border:1px solid var(--ink);color:var(--ink);padding:10px 14px;font-family:var(--ff-typewriter);font-size:13px;outline:none}
+.search:focus{border-color:var(--red);box-shadow:0 0 0 1px var(--red)}
+main{max-width:1200px;margin:0 auto;padding:36px 28px 80px;position:relative;z-index:2}
+.breaking{display:flex;align-items:center;gap:14px;padding:12px 18px;margin-bottom:30px;background:var(--ink);color:var(--paper);border:2px solid var(--ink)}
+.breaking .dot{width:12px;height:12px;border-radius:50%;background:var(--red-pulse);animation:pulse 1.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1);box-shadow:0 0 0 rgba(255,42,61,0)}50%{transform:scale(1.3);box-shadow:0 0 12px rgba(255,42,61,.8)}}
+.breaking .lbl{font-family:var(--ff-display);font-size:18px;letter-spacing:.18em;color:var(--red-pulse)}
+.breaking .msg{font-family:var(--ff-typewriter);font-size:13px;letter-spacing:.05em}
+.intro{background:var(--paper);border:2px solid var(--ink);padding:22px 26px;margin-bottom:36px;box-shadow:6px 6px 0 var(--shadow);position:relative}
+.intro::before{content:"CONFIDENTIAL";position:absolute;top:18px;right:-8px;font-family:var(--ff-display);font-size:14px;letter-spacing:.22em;color:var(--red);background:var(--paper);padding:4px 14px;border:2px solid var(--red);transform:rotate(8deg);box-shadow:2px 2px 0 rgba(0,0,0,.1)}
+.intro h2{font-family:var(--ff-display);font-size:24px;color:var(--ink);margin-bottom:14px;letter-spacing:.02em}
+.intro p{margin-bottom:8px;color:var(--ink-2);font-size:14px;line-height:1.55}
+.intro b{color:var(--red-deep)}
+.intro .note{font-family:var(--ff-hand);font-size:18px;color:var(--red-deep);margin:8px 0 12px;line-height:1.3}
+.intro .note::before{content:"✎ ";color:var(--red)}
+.order{counter-reset:step;list-style:none;margin:14px 0 0}
+.order li{counter-increment:step;display:flex;gap:14px;padding:8px 0;border-bottom:1px dashed var(--line);align-items:center}
+.order li:last-child{border-bottom:0}
+.order li::before{content:counter(step,decimal-leading-zero);color:var(--red);font-family:var(--ff-display);font-size:18px;min-width:32px}
+.order a{color:var(--ink);font-weight:700;text-decoration:none;font-family:var(--ff-typewriter)}
+.order a:hover{color:var(--red)}
+.order .why{color:var(--ink-2);font-size:15px;margin-left:auto;font-family:var(--ff-hand)}
+.phase{margin:48px 0 18px;display:flex;align-items:center;gap:14px;border-bottom:3px double var(--ink);padding-bottom:8px}
+.phase h2{font-family:var(--ff-display);font-size:22px;letter-spacing:.04em;color:var(--ink);text-transform:uppercase}
+.phase .badge{background:var(--ink);color:var(--paper);font-family:var(--ff-typewriter);font-size:10px;letter-spacing:.18em;padding:4px 10px;text-transform:uppercase}
+.card{background:var(--paper);border:2px solid var(--ink);margin-bottom:20px;padding:22px 24px;box-shadow:5px 5px 0 var(--shadow);position:relative}
+.card.hidden{display:none}
+.card h3{font-family:var(--ff-display);font-size:22px;letter-spacing:.02em;color:var(--ink);margin:0 0 6px}
+.card h3 .id{margin-right:8px;font-family:var(--ff-typewriter);font-size:13px;letter-spacing:.18em;background:var(--ink);color:var(--paper);padding:3px 8px;vertical-align:middle}
+.card .meta{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 14px}
+.chip{font-family:var(--ff-typewriter);font-size:10px;letter-spacing:.15em;text-transform:uppercase;padding:4px 10px;border:1px solid var(--ink);background:var(--paper-2);color:var(--ink)}
+.chip.red{color:var(--red);border-color:var(--red);background:rgba(209,26,42,.06)}
+.chip.blue{color:var(--blue);border-color:var(--blue)}
+.chip.green{color:var(--green);border-color:var(--green)}
+.note{font-family:var(--ff-hand);font-size:18px;color:var(--red-deep);margin:8px 0 12px;line-height:1.3}
+.note::before{content:"✎ ";color:var(--red)}
+.prompt-wrap{position:relative;margin-top:8px}
+.prompt-wrap .copy{position:absolute;top:10px;right:10px;background:var(--ink);color:var(--paper);border:0;padding:8px 14px;font-family:var(--ff-typewriter);font-size:11px;font-weight:700;letter-spacing:.12em;cursor:pointer;z-index:2;transition:background .15s}
+.prompt-wrap .copy:hover{background:var(--red)}
+.prompt-wrap .copy.copied{background:var(--green);color:var(--paper)}
+.prompt-wrap pre{margin:0;background:var(--paper-2);border:1px solid var(--line);padding:48px 18px 18px;color:var(--ink);font-family:var(--ff-mono);font-size:13px;line-height:1.6;white-space:pre-wrap;word-break:break-word;overflow-x:auto;max-height:520px;overflow-y:auto}
+.prompt-wrap pre.short{max-height:none}
+.label{font-family:var(--ff-typewriter);font-size:11px;letter-spacing:.2em;color:var(--red-deep);margin:18px 0 6px;text-transform:uppercase;border-bottom:1px solid var(--red-deep);padding-bottom:3px;display:inline-block}
+.shot-table{width:100%;border-collapse:collapse;margin:14px 0;font-family:var(--ff-typewriter)}
+.shot-table th,.shot-table td{padding:10px 12px;border:1px solid var(--line);text-align:left;font-size:12px;vertical-align:top}
+.shot-table th{background:var(--ink);color:var(--paper);font-size:11px;letter-spacing:.15em;text-transform:uppercase}
+.shot-table tr:nth-child(even){background:var(--paper-2)}
+.shot-table .priority-high{background:rgba(209,26,42,.1);font-weight:700}
+.shot-table a{font-size:11px;word-break:break-all}
+.shot-table .what{font-family:var(--ff-news);font-size:13px;color:var(--ink)}
+.shot-table .why{color:var(--ink-2);font-size:11px;font-style:italic}
+footer{margin:60px 0 0;padding:30px 28px;border-top:3px double var(--ink);color:var(--ink-2);font-size:11px;text-align:center;font-family:var(--ff-typewriter);letter-spacing:.15em}
+footer .mantra{font-family:var(--ff-display);font-size:18px;color:var(--red-deep);margin-bottom:8px;letter-spacing:.04em;font-style:italic}
+</style>
+</head>
+<body>
+<header>
+  <div class="breaking">
+    <div class="dot"></div>
+    <span class="lbl">CASE FILE 599</span>
+    <span class="msg">// SOOTHSAYER PROJECT // CONTENT &amp; PRODUCTION REFERENCE // v1.0</span>
+  </div>
+  <h1>$<b>SOOTH</b> · PRODUCTION REFERENCE</h1>
+  <div class="sub">screenshots · image prompts · x posts · telegram · replies · lore hooks</div>
+  <input type="search" class="search" id="search" placeholder="filter — type 'screenshot', 'tweet', 'globa', etc." />
+</header>
+<main>
+<section class="intro">
+  <h2>HOW TO USE THIS DOSSIER</h2>
+  <p>Every prompt and copy block has a <b>COPY</b> button. Drop into NB2 / GPT image 2 / OpenArt for visuals. Drop into Telegram / X / your post scheduler for text.</p>
+  <p><b>Production order:</b></p>
+  <ol class="order">
+    <li><a href="#shots">Screenshot the receipts</a><span class="why">— takes 20 minutes, gives the site teeth</span></li>
+    <li><a href="#imagery">Generate the supporting imagery</a><span class="why">— polaroids, stamps, cork bg</span></li>
+    <li><a href="#x">X content + day-0 sequence</a><span class="why">— schedule pre-launch + launch day</span></li>
+    <li><a href="#telegram">Telegram pinned post</a><span class="why">— paste verbatim</span></li>
+    <li><a href="#replies">Reply templates</a><span class="why">— FUD, hype, attacks</span></li>
+    <li><a href="#hooks">Lore hooks</a><span class="why">— single-liners for caption tails</span></li>
+  </ol>
+</section>
+
+<div class="phase" id="shots"><h2>SCREENSHOT SHOPPING LIST</h2><span class="badge">priority shots</span></div>
+<section class="intro">
+  <p>Highest-leverage thing you can do for the site. <b>Each screenshot becomes an "exhibit"</b> on the wall. Use a clean fullscreen browser, dark mode where applicable. Save as <code>shot-NN-name.png</code> and drop into <code>assets/shots/</code>.</p>
+  <p class="note">if a link is dead or different, screenshot what you actually see — the file is about <b>what's in public record right now</b></p>
+</section>
+
+<table class="shot-table">
+<thead><tr><th width="6%">#</th><th width="14%">Tag</th><th width="40%">What to capture</th><th width="40%">URL / source</th></tr></thead>
+<tbody>
+<tr class="priority-high"><td>01</td><td>EXHIBIT A</td><td class="what"><b>The original prediction tweet</b><div class="why">@iamasoothsayer · "2023: Corona ended / 2026: Hantavirus" · Jun 11 2022 · with current engagement numbers visible</div></td><td><a href="https://x.com/iamasoothsayer/status/1535494638391664641" target="_blank">x.com/iamasoothsayer/status/1535494638391664641</a><br/>backup: <a href="https://xcancel.com/iamasoothsayer/status/1535494638391664641" target="_blank">xcancel mirror</a></td></tr>
+<tr class="priority-high"><td>02</td><td>PROFILE</td><td class="what"><b>The @iamasoothsayer X profile, full screenshot</b><div class="why">3 sigil decoration, bio "reads the future", join date Jun 2022, all 4 posts visible</div></td><td><a href="https://x.com/iamasoothsayer" target="_blank">x.com/iamasoothsayer</a></td></tr>
+<tr><td>03</td><td>GROK</td><td class="what"><b>Grok's "unedited since 2022" verification</b><div class="why">If still visible in the replies — strongest single trust anchor.</div></td><td>Reply chain on the post above</td></tr>
+<tr><td>04</td><td>TABLET I-IV</td><td class="what"><b>Each of the 4 individual posts, separately</b><div class="why">For "the four tablets" section. Each post = own polaroid card on the wall.</div></td><td>Click each post on profile</td></tr>
+<tr class="priority-high"><td>05</td><td>WHO</td><td class="what"><b>WHO Disease Outbreak News No. 599</b><div class="why">Header + first paragraph minimum.</div></td><td><a href="https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON599" target="_blank">who.int/.../2026-DON599</a></td></tr>
+<tr><td>06</td><td>HONDIUS</td><td class="what"><b>MV Hondius Wikipedia entry</b><div class="why">Header + infobox showing 146 passengers, 23 nationalities, departure date</div></td><td><a href="https://en.wikipedia.org/wiki/MV_Hondius_hantavirus_outbreak" target="_blank">en.wikipedia.org/wiki/MV_Hondius_hantavirus_outbreak</a></td></tr>
+<tr class="priority-high"><td>07</td><td>POLYMARKET</td><td class="what"><b>Polymarket "Hantavirus pandemic in 2026?"</b><div class="why">Current odds + chart spike to 38% then settle. Volume number visible.</div></td><td><a href="https://polymarket.com/event/hantavirus-pandemic-in-2026" target="_blank">polymarket.com/event/hantavirus-pandemic-in-2026</a></td></tr>
+<tr><td>08</td><td>VIRAL QT</td><td class="what"><b>Hungrybox quote-tweet</b><div class="why">"why is this guy's handle soothsayer..." — high-cred virality moment</div></td><td><a href="https://x.com/LiquidHbox/status/2052249115950461223" target="_blank">x.com/LiquidHbox</a></td></tr>
+<tr><td>09</td><td>VIRAL QT</td><td class="what"><b>SAY CHEESE quote-tweet</b><div class="why">Mainstream-news account amplification</div></td><td><a href="https://x.com/SaycheeseDGTL/status/2052253491293253828" target="_blank">x.com/SaycheeseDGTL</a></td></tr>
+<tr><td>10</td><td>VIRAL QT</td><td class="what"><b>Aakash Gupta quote-tweet</b><div class="why">"this dude called hantavirus in 2022..."</div></td><td><a href="https://x.com/aakashgupta/status/2052290346907001294" target="_blank">x.com/aakashgupta</a></td></tr>
+<tr><td>11</td><td>POLYMARKET QT</td><td class="what"><b>Polymarket official quote-tweet</b><div class="why">"this guy needs to get on Polymarket"</div></td><td>Search Polymarket's X timeline</td></tr>
+<tr><td>12</td><td>PRESS</td><td class="what"><b>Free Press Journal article (India)</b></td><td><a href="https://www.freepressjournal.in/viral/hantavirus-prediction-tweet-from-2022-goes-viral-after-outbreak-linked-to-cruise-ship-prophecy-or-coincidence" target="_blank">freepressjournal.in</a></td></tr>
+<tr><td>13</td><td>PRESS</td><td class="what"><b>UNILAD Tech</b><div class="why">"People seriously disturbed after finding eerie tweet..."</div></td><td><a href="https://www.uniladtech.com/social-media/hantavirus-outbreak-2026-tweet-predict-2022-127912-20260507" target="_blank">uniladtech.com</a></td></tr>
+<tr><td>14</td><td>PRESS</td><td class="what"><b>Daily Beast — MAGA hantavirus angle</b></td><td><a href="https://www.thedailybeast.com/maga-melts-down-with-rat-virus-conspiracies/" target="_blank">thedailybeast.com</a></td></tr>
+<tr class="priority-high"><td>15</td><td>RUSSIAN</td><td class="what"><b>Pavel Globa pandemic warning — Radio KP</b><div class="why">"comparable to the Spanish flu" quote, 2020 article</div></td><td><a href="https://radiokp.ru/eto-budet-cherez-dva-tri-goda-globa-predrek-vozvraschenie-pandemii_nid20548_au1914au" target="_blank">radiokp.ru</a></td></tr>
+<tr><td>16</td><td>RUSSIAN</td><td class="what"><b>Mehdi Ebragimi Vafa StarHit</b><div class="why">"новый вирус мощнее COVID-19"</div></td><td><a href="https://www.starhit.ru/novosti/virus-moschnee-kovida-i-voda-po-tsene-nefti-mehdi-ebragimi-vafa-o-sudbe-mira-v-blijayshie-10-let-283206/" target="_blank">starhit.ru</a></td></tr>
+<tr><td>17</td><td>RUSSIAN</td><td class="what"><b>Tamara Globa "May 2026 will overturn everything"</b></td><td><a href="https://ura.news/news/1053090694" target="_blank">ura.news</a> · <a href="https://cxid.info/199137.html" target="_blank">cxid.info</a></td></tr>
+<tr><td>18</td><td>RUSSIAN</td><td class="what"><b>Vanga frozen-virus quote — VM.ru</b></td><td><a href="https://vm.ru/society/1005212-vanga-preduprezhdala-uchenye-rasskazali-ob-opasnyh-virusah-kotorye-mogut-ozhit-iz-za-tayaniya-lednikov" target="_blank">vm.ru</a></td></tr>
+<tr><td>19</td><td>RUSSIAN</td><td class="what"><b>Year of Red Fire Horse — Lenta</b><div class="why">Pre-published Dec 2025 framing 2026 as virus year</div></td><td><a href="https://lenta.ru/articles/2025/12/30/god-krasnoy-ognennoy-loshadi-2026/" target="_blank">lenta.ru</a></td></tr>
+<tr><td>20</td><td>CHINESE</td><td class="what"><b>Zeng Shiqiang plague quote — Zhihu</b></td><td><a href="https://zhuanlan.zhihu.com/p/1986752336928991055" target="_blank">zhihu</a></td></tr>
+<tr><td>21</td><td>CHINESE</td><td class="what"><b>赊刀人 (Knife-Sellers) verse — Epoch Times</b></td><td><a href="https://www.epochtimes.com/gb/26/2/3/n14689921.htm" target="_blank">epochtimes.com</a></td></tr>
+<tr><td>22</td><td>CHINESE</td><td class="what"><b>Tui Bei Tu Image XLI</b><div class="why">Find a clear image of the 7th-c woodblock print of Image #41</div></td><td>Wikipedia "Tui Bei Tu"</td></tr>
+<tr><td>23</td><td>JAPAN</td><td class="what"><b>TBS announcer Azumi COVID-parallel</b><div class="why">Yahoo Japan / J-CAST piece</div></td><td><a href="https://news.yahoo.co.jp/articles/9f3a5ccd57398b21e933800615c3a3b8c5e8197d" target="_blank">news.yahoo.co.jp</a></td></tr>
+<tr><td>24</td><td>KOREA</td><td class="what"><b>News1 Korea Vanga 2026</b></td><td><a href="https://www.news1.kr/world/europe/6021143" target="_blank">news1.kr</a></td></tr>
+<tr><td>25</td><td>SUBSTACK</td><td class="what"><b>Jeremy Faust hantavirus landing</b></td><td><a href="https://insidemedicine.substack.com/p/hantavirus-landing-page" target="_blank">insidemedicine.substack.com</a></td></tr>
+<tr><td>26</td><td>SUBSTACK</td><td class="what"><b>Katelyn Jetelina — "no playbook"</b></td><td><a href="https://yourlocalepidemiologist.substack.com/p/hantavirus-situation-update-and-getting" target="_blank">yourlocalepidemiologist.substack.com</a></td></tr>
+<tr><td>27</td><td>SUBSTACK</td><td class="what"><b>JD Rucker — "Disease X Dress Rehearsal"</b></td><td><a href="https://jdrucker.substack.com/p/the-hantavirus-cruise-and-the-disease" target="_blank">jdrucker.substack.com</a></td></tr>
+<tr><td>28</td><td>SUBSTACK</td><td class="what"><b>Alex Krainer — Polaris war games + Moderna mRNA</b></td><td><a href="https://trendcompass.substack.com/p/hantavirus-scare-ramps-up" target="_blank">trendcompass.substack.com</a></td></tr>
+<tr><td>29</td><td>JUNE 10</td><td class="what"><b>CNN "five things" June 10 2022</b><div class="why">Day "Corona ended" became policy — soothsayer's first post day</div></td><td><a href="https://www.cnn.com/2022/06/10/us/five-things-june-10-trnd" target="_blank">cnn.com</a></td></tr>
+<tr><td>30</td><td>WHO 2023</td><td class="what"><b>UN news — WHO ends COVID PHEIC May 5 2023</b></td><td><a href="https://news.un.org/en/story/2023/05/1136367" target="_blank">news.un.org</a></td></tr>
+<tr><td>31</td><td>FACT-CHECK</td><td class="what"><b>Snopes hantavirus cruise fact-check</b></td><td><a href="https://www.snopes.com/fact-check/cruise-ship-hantavirus-rare/" target="_blank">snopes.com</a></td></tr>
+<tr><td>32</td><td>BILL GATES</td><td class="what"><b>NewsX "Did Bill Gates Predict Hantavirus" debunk</b><div class="why">For "myths we won't peddle" footnote</div></td><td><a href="https://www.newsx.com/world/hantavirus-updates-did-bill-gates-predict-hantavirus-next-pandemic-could-be-more-severe-claim-goes-viral-watch-215069/" target="_blank">newsx.com</a></td></tr>
+<tr><td>33</td><td>HANTA</td><td class="what"><b>HANTA Solana DexScreener</b><div class="why">Show competitor token MC peak</div></td><td><a href="https://dexscreener.com/solana/bcrckcnoqdrcpfbpfuahp61bnxtnnmbcxndfrko5d3dr" target="_blank">dexscreener.com</a></td></tr>
+</tbody>
+</table>
+
+<div class="phase" id="imagery"><h2>IMAGE GENERATION PROMPTS</h2><span class="badge">NB2 · GPT image 2 · OpenArt</span></div>
+<section class="intro">
+  <p>Use these to fill the gaps where screenshots can't. Each prompt is paste-ready for Nano Banana 2 or GPT-image-2.</p>
+  <p class="note">aspect ratios are set in the tool, never in prompt body</p>
+</section>
+
+<article class="card" data-tags="hero polaroid soothsayer mug">
+<h3><span class="id">IMG-01</span>HERO POLAROID — "the soothsayer" mug shot</h3>
+<div class="meta"><span class="chip red">PRIORITY</span><span class="chip">3:4 · 900×1200</span><span class="chip blue">NB2 / GPT image 2</span></div>
+<p class="note">used as the anonymous-subject polaroid pinned to the corkboard</p>
+<div class="prompt-wrap"><button class="copy">COPY PROMPT</button>
+<pre class="prompt-text">Photographed instant-camera Polaroid lying on a dark wood desk, top-down macro shot, 50mm f/2.8. The polaroid frame is classic white with the wider bottom border. Inside the photo: a dimly-lit hooded figure shot in the style of a 1970s witness-protection identification photograph — face entirely obscured by deep hood shadow, only one slit-pupiled green eye catching a single key light, dark robe, a faint snake coil visible at one shoulder, neutral dark grey background, slight motion blur on the figure as if caught mid-turn. The polaroid film has aged: slight cream-yellow tint, faint chemical fading at the corners, one small thumbprint smudge at the bottom-right corner. Across the white bottom border, hand-written in fading red marker: "subject: unknown · 06/2022". A single thin red string is taped to the upper-left corner with a strip of yellow washi tape. Lighting: harsh single key from upper-left at 3200K, deep velvet shadow on right side. Aesthetic: investigative case file, real-world tactile, 1990s detective wall, Zodiac Killer film grade. Photorealistic surface detail, deliberately ambiguous subject identity.
+
+--no fantasy art, --no anime, --no cartoon, --no smiling, --no clear face visible, --no modern selfie composition, --no AI face artifacts, --no horns, --no Halloween, --no kids book, --no rainbow, --no neon glow.</pre></div>
+</article>
+
+<article class="card" data-tags="cork board background">
+<h3><span class="id">IMG-02</span>CORK BOARD — full background texture</h3>
+<div class="meta"><span class="chip">16:9 · 2400×1350</span><span class="chip blue">NB2 / GPT image 2</span></div>
+<p class="note">used as THE WALL section background under the polaroid grid</p>
+<div class="prompt-wrap"><button class="copy">COPY PROMPT</button>
+<pre class="prompt-text">Top-down photograph of a real cork board, large 1.2m × 0.7m surface, weathered, slightly stained, 16:9 landscape. Photorealistic cork pin-board texture: medium brown with warm honey undertones, varied density showing pin-prick scars across the surface, scattered punctures from years of use. Surface lit by warm tungsten room light from upper-left at 3200K, slight shadow falling diagonally across the lower right. A few faint pencil markings barely visible. No pins, no notes, no objects on the board — just the empty surface. Photographed with a 50mm f/4 lens, slight vignetting at corners, paper grain visible at high zoom. Color grade: warm honey-brown, deep umber in pin-scars, faint gold highlights from the light. Texture must be real cork (not plastic, not foam, not laminate).
+
+--no people, --no pins, --no notes, --no fantasy art, --no anime, --no cartoon, --no rainbow, --no plastic surface, --no kids book, --no AI artifacts.</pre></div>
+</article>
+
+<article class="card" data-tags="manila folder document">
+<h3><span class="id">IMG-03</span>MANILA FOLDER — document texture</h3>
+<div class="meta"><span class="chip">16:9 · 2400×1350</span><span class="chip blue">NB2 / GPT image 2</span></div>
+<div class="prompt-wrap"><button class="copy">COPY PROMPT</button>
+<pre class="prompt-text">Top-down photograph of an aged manila folder lying open and flat, 16:9 landscape. Photorealistic manila card stock surface: warm cream-yellow with faint paper fiber grain, slight age-yellowing at the corners, two horizontal fold creases (not deep, just visible). Lower-right corner has a small coffee-ring stain in faded brown. Upper-left corner has a single small triangular tear. Lighting: soft fluorescent overhead at 4500K, slight directional shadow from upper-left, paper texture visible. Color grade: warm cream, faint umber, no other color. The folder is empty — no documents on top, just the inner texture. Photographed with 50mm f/5.6, sharp surface detail.
+
+--no documents, --no text on folder, --no people, --no fantasy art, --no anime, --no cartoon, --no rainbow, --no plastic surface, --no kids book, --no AI artifacts.</pre></div>
+</article>
+
+<article class="card" data-tags="stamp confidential redacted verified">
+<h3><span class="id">IMG-04</span>STAMP SET — CONFIDENTIAL · VERIFIED · REDACTED · CASE 599</h3>
+<div class="meta"><span class="chip">1:1 · 600×600 transparent</span><span class="chip blue">NB2 / GPT image 2</span></div>
+<p class="note">generate 4 separate stamps — used across the site as decorative anchors</p>
+<div class="prompt-wrap"><button class="copy">COPY PROMPT</button>
+<pre class="prompt-text">A single rubber-stamp impression on a transparent background, 1:1 square. The stamp shows the word "[STAMP_TEXT]" in heavy condensed sans-serif type (Impact / Bebas Neue style), all caps, with a thick rectangular border around it. The ink is realistic ink-on-paper: applied unevenly with smudges, missing patches where the stamp didn't make contact, slight bleed at the edges. Color: deep red ink (#c8141a) for "CONFIDENTIAL" and "REDACTED"; faded navy blue ink (#2a3d5e) for "VERIFIED"; deep red for "CASE 599 · CLASSIFIED". The stamp is rotated by 6-12 degrees off-axis. Background must be FULLY TRANSPARENT (alpha channel) — only the stamp ink. Photorealistic ink texture with grain.
+
+[STAMP_TEXT — generate as 4 separate images]:
+1. CONFIDENTIAL (red)
+2. VERIFIED · GROK (faded blue)
+3. REDACTED (red)
+4. CASE 599 · CLASSIFIED (red, with date 07.05.2026)
+
+--no full background, --no white background, --no kids book, --no neon, --no anime, --no cartoon, --no fantasy, --no AI artifacts, --no extra letters, --no gibberish text.</pre></div>
+</article>
+
+<article class="card" data-tags="red string pin">
+<h3><span class="id">IMG-05</span>RED STRING + PUSHPIN</h3>
+<div class="meta"><span class="chip">1:1 · 800×800 transparent</span><span class="chip blue">NB2 / GPT image 2</span></div>
+<div class="prompt-wrap"><button class="copy">COPY PROMPT</button>
+<pre class="prompt-text">Macro photograph of a single red plastic pushpin pierced through a tiny scrap of paper, with a length of red wool yarn tied around the pin's stem and trailing off to one side. 1:1 square crop, centered, transparent background. The pushpin is glossy red plastic with a small steel point, tilted slightly off-axis. The yarn is 3-ply red wool with visible fiber texture, ~3 inches visible length. The paper scrap is small (1 cm), torn at the edge, faintly off-white. Lighting: single warm key from upper-left at 3200K, soft shadow from the pin onto the paper scrap. Photorealistic, real-world tactile.
+
+--no full background, --no white background, --no extra pins, --no rainbow, --no anime, --no cartoon, --no AI artifacts, --no fantasy, --no kids book.</pre></div>
+</article>
+
+<article class="card" data-tags="red marker annotation circle">
+<h3><span class="id">IMG-06</span>HAND-DRAWN RED CIRCLE + ARROW</h3>
+<div class="meta"><span class="chip">PNG transparent</span><span class="chip blue">NB2 / GPT image 2</span></div>
+<p class="note">red marker annotations to overlay on the prediction tweet</p>
+<div class="prompt-wrap"><button class="copy">COPY PROMPT</button>
+<pre class="prompt-text">A single hand-drawn red marker circle on a transparent background, 1:1 square. The circle is roughly oval (not perfect), drawn with a thick red Sharpie-style permanent marker, slight wobble in the line, two passes overlapping (you can see the second pass slightly off-register). Marker color: deep arterial red (#c8141a). The line has the characteristic Sharpie texture — slight feathering at the start and end strokes, fully opaque ink. The circle is approximately 70% of the canvas width. Background must be FULLY TRANSPARENT.
+
+Generate 3 variations: (1) circle, (2) curved arrow pointing right, (3) underline strike with star.
+
+--no full background, --no kids book, --no neon, --no rainbow, --no AI artifacts, --no fantasy, --no anime.</pre></div>
+</article>
+
+<article class="card" data-tags="hero composition wall cinematic case file 599 soothsayer">
+<h3><span class="id">IMG-07</span>HERO COMPOSITION — CASE FILE 599 evidence wall (project-specific)</h3>
+<div class="meta"><span class="chip red">PRIORITY</span><span class="chip">16:9 · 2400×1350</span><span class="chip blue">NB2 / GPT image 2</span></div>
+<p class="note">the actual project's wall — every pinned object is a piece of OUR research. NOT a generic murder board.</p>
+<div class="prompt-wrap"><button class="copy">COPY PROMPT</button>
+<pre class="prompt-text">Wide cinematic photograph of a researcher's evidence wall, 16:9 landscape. Shot on 35mm f/2.8 Kodak Portra 400 grain, slight handheld camera feel, single bare desk lamp at lower-left throwing hard warm tungsten light (3200K) across the wall. Aesthetic: investigative journalism, NOT murder mystery — this is a documentation wall, not a manhunt. Mood: All The President's Men (1976) + Spotlight (2015) + The Insider (1999), midnight, ashtray at the edge of the desk, single coffee mug. Color grade: deep umber, oxblood, manila cream, ivory paper, smoke grey, single arterial-red accents. Photorealistic, real-world tactile, NOT digital art.
+
+The wall is a large 1.5m × 0.9m weathered cork board. Pinned to it, in a deliberately uneven arrangement (this is a working wall, not staged):
+
+CENTER — a single screenshot printout of an X/Twitter profile reading "soothsayer · @iamasoothsayer · reads the future · joined June 2022 · 4 posts" — pinned with a red plastic pushpin, slightly tilted. A red marker has hand-circled the join date. To its right, taped with yellow washi: a smaller printout of the prediction tweet itself, headline visible: "2023: Corona ended / 2026: Hantavirus" — the second line is heavily circled in red Sharpie with a hand-drawn arrow pointing to the date "11 Jun 2022".
+
+UPPER-LEFT QUADRANT — a torn newspaper-style clipping with the headline "WHO DISEASE OUTBREAK NEWS · No. 599" in serif type, pinned. A second clipping below it shows the silhouette of a cruise ship with the typewritten label "MV HONDIUS · departed Ushuaia 20 Mar 2026". A small handwritten Post-it reads: "146 souls · 23 nationalities · 3 dead".
+
+UPPER-RIGHT QUADRANT — a stack of 3 pinned polaroids, faces partially obscured by hood/shadow/halftone, each labeled in Sharpie below: "PAVEL GLOBA · RUSSIA · 2020", "MEHDI · 2022", "TAMARA GLOBA · 2024". Above them a handwritten card: "VOICES II–IV".
+
+LOWER-LEFT QUADRANT — a black-and-white archival photo of an old Bulgarian woman, pinned with a single rust-red thumbtack, labeled: "VANGA · d. 1996 · V/IX". Beside it a fragment of a Chinese character print on rice paper showing 丙午 (Red Horse) in heavy ink, labeled "RED HORSE YEAR · 2026". A folded photocopy partially visible underneath shows part of the Tui Bei Tu woodblock image #41.
+
+LOWER-RIGHT QUADRANT — a Polymarket chart printout showing a spike to 38% then a drop to 9%, with the line "HANTAVIRUS · PANDEMIC · 2026" visible. Below it: a small CNN clipping dated 10 JUN 2022 with the partial visible headline "...lifts COVID international travel-testing rules". A red marker arrow connects the CNN date to the soothsayer profile screenshot in the center.
+
+SCATTERED ACROSS — at least 6 lengths of red wool yarn forming connections between elements: from soothsayer → CNN clipping (June 10 anchor), from soothsayer → WHO DON599, from each of the 9 voice polaroids → the central soothsayer profile (radiating outward like a star). Each yarn endpoint is knotted around a pushpin.
+
+ANNOTATIONS — three handwritten Sharpie notes on torn manila scraps:
+"NINE VOICES · THREE CONTINENTS · ONE YEAR"
+"GROK CONFIRMED · UNEDITED SINCE 2022"
+"we did not foretell. we recorded."
+
+STAMPS — at the edge of two clippings, hand-applied rubber-stamp impressions in deep red ink, slightly smudged: "CONFIDENTIAL" rotated 8°, "VERIFIED" in faded navy on a different document.
+
+The wall has lived-in texture — slight coffee ring on one Post-it, a single thumbprint on the soothsayer screenshot, faint pencil marginalia on the manila scraps. Empty pin-prick scars from years of prior use show on the bare cork between objects. The lamp throws long warm shadows behind every pinned item, carving depth.
+
+CRITICAL TEXT ACCURACY: "2023: Corona ended", "2026: Hantavirus", "@iamasoothsayer", "MV HONDIUS", "WHO DISEASE OUTBREAK NEWS · No. 599", "PAVEL GLOBA", "MEHDI", "TAMARA GLOBA", "VANGA", "丙午", "we did not foretell. we recorded." must all be spelled exactly as written. No misspellings, no extra creatures, no gibberish.
+
+--no people in the room, --no faces clearly visible on the polaroids (always shadowed/partial), --no fantasy art, --no D&D, --no anime, --no cartoon, --no AI face artifacts, --no rainbow, --no neon, --no kids book, --no perfectly arranged grid (this must look messy/lived-in), --no Hollywood-perfect lighting, --no comic-book style, --no Marvel/MCU aesthetic, --no rocket emoji, --no smiley, --no readable English elsewhere besides specified text.</pre></div>
+</article>
+
+<article class="card" data-tags="og share card social newspaper">
+<h3><span class="id">IMG-08</span>OG / TWITTER SHARE CARD — newspaper-front</h3>
+<div class="meta"><span class="chip">1.91:1 · 1200×630</span><span class="chip red">PRIORITY</span><span class="chip blue">NB2 / GPT image 2</span></div>
+<p class="note">most-shared asset of the project</p>
+<div class="prompt-wrap"><button class="copy">COPY PROMPT</button>
+<pre class="prompt-text">Horizontal 1.91:1 newspaper-front-page composition, photorealistic. The masthead at the top reads in heavy serif type: "THE SOOTHSAYER FILES · CASE 599 · MAY 2026". Below, a giant black-ink headline in newspaper-display serif: "THE EIGHT-WORD PROPHECY". Subhead in slightly smaller italic serif: "An anonymous account posted four times in 2022 and went silent. One post named the next plague." Lower-left: a faded black-and-white polaroid pinned to the page with a red plastic pushpin showing a hooded figure with one green eye visible. Lower-right: a fragment of the original tweet text visible on a smaller pinned scrap — "2023: Corona ended / 2026: Hantavirus" — circled in red Sharpie. Center: a hand-drawn red curved arrow connecting the polaroid to the tweet fragment. Background: aged cream newsprint, slight coffee stain at the lower-left corner, paper grain. A single red rubber stamp diagonally across the upper-right reading "BREAKING" in arterial red ink. Lighting: harsh fluorescent overhead, slight shadow.
+
+CRITICAL TEXT ACCURACY: "THE SOOTHSAYER FILES" + "CASE 599" + "THE EIGHT-WORD PROPHECY" + "BREAKING" + "2023: Corona ended" + "2026: Hantavirus" all spelled exactly as shown. No misspellings.
+
+--no kids book, --no neon, --no rainbow, --no anime, --no cartoon, --no fantasy, --no AI face artifacts, --no comic-book style, --no clean digital UI, --no Hollywood gloss, --no readable English elsewhere besides specified text, --no gibberish.</pre></div>
+</article>
+
+<div class="phase" id="x"><h2>X / TWITTER CONTENT</h2><span class="badge">paste-ready</span></div>
+
+<article class="card" data-tags="x bio">
+<h3><span class="id">X-BIO</span>X account bio</h3>
+<div class="prompt-wrap"><button class="copy">COPY</button>
+<pre class="prompt-text short">CASE FILE 599 · the soothsayer files
+nine voices named 2026 before 2026
+one of them named the disease
+we did not foretell · we recorded
+$SOOTH · ETH</pre></div>
+</article>
+
+<article class="card" data-tags="pre-launch teaser">
+<h3><span class="id">X-T7</span>Pre-launch · T-7 · the artifact drop</h3>
+<div class="prompt-wrap"><button class="copy">COPY</button>
+<pre class="prompt-text short">[image: screenshot of @iamasoothsayer's "2026: Hantavirus" tweet, no caption, no logo, no shill]</pre></div>
+</article>
+
+<article class="card" data-tags="pre-launch teaser">
+<h3><span class="id">X-T5</span>Pre-launch · T-5 · the count</h3>
+<div class="prompt-wrap"><button class="copy">COPY</button>
+<pre class="prompt-text short">@iamasoothsayer posted 4 times in june 2022.
+
+one of those posts said: "2023: Corona ended / 2026: Hantavirus"
+
+then total silence.
+
+four years later, the hondius docked.
+
+the file is being prepared.</pre></div>
+</article>
+
+<article class="card" data-tags="pre-launch teaser globa wall">
+<h3><span class="id">X-T3</span>Pre-launch · T-3 · the wall</h3>
+<div class="prompt-wrap"><button class="copy">COPY</button>
+<pre class="prompt-text short">he was not the only one.
+
+PAVEL GLOBA (russia · 2020) — "comparable to the spanish flu of 1918-1919"
+MEHDI (iran · 2022) — "a new virus, more powerful than COVID"
+TAMARA GLOBA (russia · 2024) — "may 2026 will overturn everything"
+BABA VANGA (bulgaria · pre-1996) — "frozen virus from melting glaciers"
+ZENG SHIQIANG (taiwan · 2018) — "the next 5 years are mass human death"
+
+nine voices. three continents. one year named.
+
+case file 599 · soon.</pre></div>
+</article>
+
+<article class="card" data-tags="day zero launch manifesto">
+<h3><span class="id">X-D0</span>Day 0 · launch · pinned manifesto</h3>
+<div class="prompt-wrap"><button class="copy">COPY</button>
+<pre class="prompt-text short">CASE FILE 599 OPENS.
+
+on june 11, 2022, an account named soothsayer posted: "2023: Corona ended / 2026: Hantavirus"
+
+eight words.
+
+he posted four times in one week. went silent. for four years.
+
+today the file lists nine other voices who marked 2026 in advance — across russia, china, india, bulgaria, brazil, ancient egypt.
+
+we are not naming a perpetrator. we are recording the record.
+
+the fifth tablet is on ethereum.
+
+$SOOTH · CA: [paste]
+soothsayer.xyz</pre></div>
+</article>
+
+<article class="card" data-tags="wall drop voice anchor">
+<h3><span class="id">X-WALL-01</span>Wall drop · I/IX · @iamasoothsayer (anchor)</h3>
+<div class="prompt-wrap"><button class="copy">COPY</button>
+<pre class="prompt-text short">CASE FILE 599 · VOICE I/IX
+
+NAME: @iamasoothsayer
+LOCATION: anonymous · english language
+DATE OF RECORD: 11 June 2022, 08:30 UTC
+QUOTE: "2023: Corona ended / 2026: Hantavirus"
+VERIFICATION: Grok in-thread — unedited since 2022
+STATUS: silent for 4 years
+
+[image: pinned polaroid + tweet exhibit]
+
+the only voice that named both year and disease.</pre></div>
+</article>
+
+<article class="card" data-tags="wall drop globa russia">
+<h3><span class="id">X-WALL-02</span>Wall drop · II/IX · Pavel Globa</h3>
+<div class="prompt-wrap"><button class="copy">COPY</button>
+<pre class="prompt-text short">CASE FILE 599 · VOICE II/IX
+
+NAME: Pavel Globa · Павел Глоба
+LOCATION: Russia · astrologer
+DATE OF RECORD: 7 May 2020 · Radio Komsomolskaya Pravda
+QUOTE: "if we don't prepare seriously, it will be comparable to the Spanish flu epidemic of 1918-1919"
+SECONDARY: 2026 maritime warning — "straits and channels will gain much greater significance"
+
+[image: Radio KP article screenshot]
+
+russia's most-cited astrologer. on the public record. 2020.</pre></div>
+</article>
+
+<article class="card" data-tags="wall drop mehdi">
+<h3><span class="id">X-WALL-03</span>Wall drop · III/IX · Mehdi</h3>
+<div class="prompt-wrap"><button class="copy">COPY</button>
+<pre class="prompt-text short">CASE FILE 599 · VOICE III/IX
+
+NAME: Mehdi Ebragimi Vafa · Мехди
+LOCATION: Iran/Russia · "Battle of Psychics" winner
+DATE: 18 October 2022 · StarHit
+QUOTE: "появится новый вирус, мощнее того, что мы называем COVID-19"
+EN: "a new virus will appear, more powerful than what we call COVID-19"
+
+[image: starhit.ru article]
+
+the man who won russia's biggest psychic show. on the record. 2022.</pre></div>
+</article>
+
+<article class="card" data-tags="wall drop tamara may">
+<h3><span class="id">X-WALL-04</span>Wall drop · IV/IX · Tamara Globa</h3>
+<div class="prompt-wrap"><button class="copy">COPY</button>
+<pre class="prompt-text short">CASE FILE 599 · VOICE IV/IX
+
+NAME: Tamara Globa · Тамара Глоба
+DATE: 23 December 2024 · StarHit
+QUOTE: "2025 и 2026-й — это поворотные годы. весь мир будет перестраиваться."
+SECONDARY (Jan 2026): "may 2026 will overturn everything"
+
+[image: ura.news screenshot]
+
+she named the month. it landed in that month.</pre></div>
+</article>
+
+<article class="card" data-tags="wall drop vanga frozen virus">
+<h3><span class="id">X-WALL-05</span>Wall drop · V/IX · Baba Vanga</h3>
+<div class="prompt-wrap"><button class="copy">COPY</button>
+<pre class="prompt-text short">CASE FILE 599 · VOICE V/IX
+
+NAME: Baba Vanga · Ванга
+LOCATION: Bulgaria · seer (d. 1996)
+SOURCE: biographer Krasimira Stoyanova; Russian press (RIA, KP, AiF)
+QUOTE (interpreted): "frozen virus particles in glaciers will be released by climate change and cause a new pandemic"
+2026: "one part of the world will freeze, another will burn"
+
+[image: VM.ru / RIA archive]
+
+dead 30 years. still on the wall.</pre></div>
+</article>
+
+<article class="card" data-tags="wall drop zeng plague">
+<h3><span class="id">X-WALL-06</span>Wall drop · VI/IX · Zeng Shiqiang (曾仕強)</h3>
+<div class="prompt-wrap"><button class="copy">COPY</button>
+<pre class="prompt-text short">CASE FILE 599 · VOICE VI/IX
+
+NAME: 曾仕強 · Zeng Shiqiang
+LOCATION: Taiwan · I Ching scholar (d. 2018)
+SOURCE: c.2015 lecture series (still circulating on Chinese internet)
+QUOTE: "未来5年是人类大量死亡的阶段。上天的第一个工具叫做瘟疫。"
+EN: "the next 5 years are mass human death. heaven's first tool is plague."
+ALSO: framed 2026 as 丙午 — the Red Horse year
+
+[image: zhihu zhuanlan screenshot]
+
+he died in 2018. the prediction outlived him.</pre></div>
+</article>
+
+<article class="card" data-tags="wall drop knife sellers verse">
+<h3><span class="id">X-WALL-07</span>Wall drop · VII/IX · 赊刀人 (Knife-Sellers)</h3>
+<div class="prompt-wrap"><button class="copy">COPY</button>
+<pre class="prompt-text short">CASE FILE 599 · VOICE VII/IX
+
+SOURCE: 赊刀人 · the Knife-Sellers (Chinese folk-prophecy tradition)
+PUBLISHED: Epoch Times, 3 February 2026
+VERSE: "二六红马血火喷 / 西洋暗无天日 / 南洋米贵如珍珠 / 东洋遍地是枯骨"
+EN: "2026 red horse year, blood and fire spew / the western ocean is darkened sunless / south seas: rice precious as pearls / east: bones bleached"
+
+[image: epoch times screenshot]
+
+a folk verse, published months before the cruise.</pre></div>
+</article>
+
+<article class="card" data-tags="wall drop tui bei tu">
+<h3><span class="id">X-WALL-08</span>Wall drop · VIII/IX · 推背圖 image #41</h3>
+<div class="prompt-wrap"><button class="copy">COPY</button>
+<pre class="prompt-text short">CASE FILE 599 · VOICE VIII/IX
+
+SOURCE: 推背圖 · Tui Bei Tu · Tang Dynasty (7th century)
+IMAGE: XLI of LX
+VERSE: "天地晦盲 草木蕃殖 / 陰陽反背 上土下日"
+EN: "heaven and earth go dark, plants multiply unchecked / yin and yang reverse / earth above, sun below"
+
+[image: woodblock print of image XLI]
+
+13 centuries old. on the wall.</pre></div>
+</article>
+
+<article class="card" data-tags="wall drop red horse year final">
+<h3><span class="id">X-WALL-09</span>Wall drop · IX/IX · Red Fire Horse year</h3>
+<div class="prompt-wrap"><button class="copy">COPY</button>
+<pre class="prompt-text short">CASE FILE 599 · VOICE IX/IX
+
+SOURCE: Sino-Russian astrology folk tradition
+PUBLISHED: Lenta · 30 December 2025
+SUBJECT: 2026 = 丙午 — Year of the Red Fire Horse
+KEY DATE: 17 February 2026 — solar eclipse opening the year
+TRADITIONAL READING: "solar eclipses traditionally activate viruses (cf. coronavirus 2019)"
+
+[image: lenta.ru article + red horse symbol]
+
+the calendar said it before the WHO did.
+
+— THE WALL IS COMPLETE —
+the file is now open to the public.
+$SOOTH · soothsayer.xyz</pre></div>
+</article>
+
+<article class="card" data-tags="absence load-bearing post">
+<h3><span class="id">X-ABSENCE</span>The absence post (load-bearing)</h3>
+<div class="prompt-wrap"><button class="copy">COPY</button>
+<pre class="prompt-text short">we checked.
+
+no substack named hantavirus + 2026 before may 2026.
+no prediction market opened a hantavirus contract before may 4 2026.
+no anglo-american astrologer named hantavirus by name.
+no major journalist flagged it.
+
+@iamasoothsayer is the only public, dated, english-language pre-outbreak hantavirus + 2026 marker on the indexable internet.
+
+that is the entire case.</pre></div>
+</article>
+
+<article class="card" data-tags="june 10 anchor coincidence">
+<h3><span class="id">X-JUNE10</span>June 10 coincidence post</h3>
+<div class="prompt-wrap"><button class="copy">COPY</button>
+<pre class="prompt-text short">10 june 2022:
+the U.S. government formally lifted COVID international travel-testing rules. first day "Corona ended" became bureaucratic reality.
+
+same day:
+@iamasoothsayer made his first post.
+
+next morning:
+"2023: Corona ended / 2026: Hantavirus"
+
+eleven months before WHO would say it.
+
+[image: CNN june 10 2022 + tweet timestamp]
+
+the file does not believe in coincidence. the file records coincidence.</pre></div>
+</article>
+
+<article class="card" data-tags="shitpost team doxxed">
+<h3><span class="id">X-SP-01</span>Shitpost · the file persona</h3>
+<div class="prompt-wrap"><button class="copy">COPY</button>
+<pre class="prompt-text short">"is the team doxxed"
+
+the team is the public record.
+nine voices on three continents.
+all named.
+all sourced.
+the file is the team.</pre></div>
+</article>
+
+<article class="card" data-tags="shitpost roadmap">
+<h3><span class="id">X-SP-02</span>Shitpost · roadmap</h3>
+<div class="prompt-wrap"><button class="copy">COPY</button>
+<pre class="prompt-text short">roadmap:
+
+— keep recording
+— do not foretell
+— close the file when there is nothing more to record
+
+the file is open. there is more to record.</pre></div>
+</article>
+
+<div class="phase" id="telegram"><h2>TELEGRAM</h2><span class="badge">paste verbatim</span></div>
+
+<article class="card">
+<h3><span class="id">TG-NAME</span>Channel name + description</h3>
+<div class="prompt-wrap"><button class="copy">COPY</button>
+<pre class="prompt-text short">name: $SOOTH · CASE FILE 599
+
+description:
+the soothsayer files. an anonymous account named hantavirus + 2026 in june 2022. eight other voices named 2026 across three continents. one of them was right.
+
+we did not foretell. we recorded.
+
+soothsayer.xyz · ETH</pre></div>
+</article>
+
+<article class="card">
+<h3><span class="id">TG-PIN</span>Pinned post (paste full + pin)</h3>
+<div class="prompt-wrap"><button class="copy">COPY</button>
+<pre class="prompt-text">━━━━━━━━━━━━━━━━━━━━━━━━━━━
+◆ CASE FILE 599 · the soothsayer files ◆
+━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ON 11 JUNE 2022 at 8:30 AM UTC, an anonymous English-language X account, @iamasoothsayer, posted:
+
+   "2023: Corona ended
+    2026: Hantavirus"
+
+The account had made 4 posts that week and would never post again.
+
+ON 5 MAY 2023, the WHO officially declared the end of the COVID-19 PHEIC.
+
+ON 2 MAY 2026, WHO Disease Outbreak News No. 599 reported a multi-country hantavirus cluster on the cruise ship MV Hondius. Andes strain. ~40% case fatality.
+
+GROK confirmed in-thread that the soothsayer post has not been edited since 2022.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+THE FILE LISTS NINE INDEPENDENT VOICES who named 2026 in advance:
+
+I.    @iamasoothsayer (anonymous, 2022)
+II.   Pavel Globa · Russia · astrologer · 2020
+III.  Mehdi Ebragimi Vafa · "Battle of Psychics" winner · 2022
+IV.   Tamara Globa · Russia · astrologer · 2024
+V.    Baba Vanga · Bulgaria · seer · pre-1996
+VI.   Zeng Shiqiang (曾仕强) · Taiwan · I Ching · 2018
+VII.  赊刀人 (the Knife-Sellers) · Chinese folk · pub. Feb 2026
+VIII. 推背圖 image XLI · Tang Dynasty · 7th century
+IX.   the Red Fire Horse year (丙午) · Sino-Russian folk astrology
+
+We do not assert causation.
+We do not allege a leak.
+We are recording, in public, with sources, with stamps, that the year was named.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+CONTRACT (ETH):
+[CA — paste on deploy]
+
+BUY:    app.uniswap.org/swap?outputCurrency=[CA]
+CHART:  dexscreener.com/ethereum/[CA]
+SITE:   soothsayer.xyz
+X:      x.com/[handle]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+TOKENOMICS
+
+  supply         5,555,555,555
+  tax            0% / 0%
+  LP             100% burned
+  mint           revoked
+  owner          renounced
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+THE RULES (read once)
+
+◆ no price talk in the channel
+◆ no shilling other tokens
+◆ FUD will be answered with sources, never with insults
+◆ we do not name perpetrators
+◆ we do not assert what we cannot source
+◆ when the file is wrong, we say so on the wall
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+we did not foretell. we recorded.</pre></div>
+</article>
+
+<div class="phase" id="replies"><h2>REPLY TEMPLATES</h2><span class="badge">stay on voice</span></div>
+
+<article class="card" data-tags="reply rug">
+<h3><span class="id">R-RUG</span>"is this a rug?"</h3>
+<div class="prompt-wrap"><button class="copy">COPY</button>
+<pre class="prompt-text short">LP burned. mint revoked. owner renounced. contract verified on etherscan. the team is the public record. the wall is on the website.</pre></div>
+</article>
+
+<article class="card" data-tags="reply utility">
+<h3><span class="id">R-UTIL</span>"what's the utility?"</h3>
+<div class="prompt-wrap"><button class="copy">COPY</button>
+<pre class="prompt-text short">none. by design. only record.</pre></div>
+</article>
+
+<article class="card" data-tags="reply hype">
+<h3><span class="id">R-HYPE</span>responding to "WAGMI / LFG"</h3>
+<div class="prompt-wrap"><button class="copy">COPY</button>
+<pre class="prompt-text short">[do not engage. silence is the response. the file does not LFG.]</pre></div>
+</article>
+
+<article class="card" data-tags="reply scam coincidence">
+<h3><span class="id">R-SCAM</span>"this is a scam / coincidence / lucky"</h3>
+<div class="prompt-wrap"><button class="copy">COPY</button>
+<pre class="prompt-text short">we did not assert causation. we recorded that the year was named.
+
+if you can find a substack, prediction market, or major astrologer who named hantavirus + 2026 by name before may 2026, we will publish your finding on the wall and credit you.
+
+we have looked. we have not found one. you are welcome to try.</pre></div>
+</article>
+
+<article class="card" data-tags="reply gates myth">
+<h3><span class="id">R-GATES</span>responding to "Bill Gates predicted it!" myths</h3>
+<div class="prompt-wrap"><button class="copy">COPY</button>
+<pre class="prompt-text short">we don't peddle that myth. NewsX debunked the "Bill Gates predicted hantavirus" claim — the supposed source doesn't exist.
+
+we only record voices we can source.
+
+[link: newsx.com debunk]</pre></div>
+</article>
+
+<article class="card" data-tags="reply high profile vip">
+<h3><span class="id">R-VIP</span>if a high-profile account replies</h3>
+<div class="prompt-wrap"><button class="copy">COPY</button>
+<pre class="prompt-text short">[HALT all automation. hand-write the reply. send to nik before posting. the response could define the project.]</pre></div>
+</article>
+
+<div class="phase" id="hooks"><h2>LORE HOOKS</h2><span class="badge">single-liners</span></div>
+
+<article class="card">
+<h3><span class="id">HOOKS</span>20 sticky one-liners</h3>
+<div class="prompt-wrap"><button class="copy">COPY</button>
+<pre class="prompt-text">we did not foretell. we recorded.
+nine voices. three continents. one year named.
+the file does not believe in coincidence. the file records coincidence.
+four tablets. four years of silence. one prophecy fulfilled.
+he posted four times. one of them was right.
+no substack named it. no market named it. only the soothsayer.
+the absence is the evidence.
+case file 599 · the file is open · we are still recording.
+the wall is real. the pins are red. the strings are tight.
+russia named it. china named it. india named it. bulgaria named it. an anonymous english account named it.
+grok confirmed unedited since 2022.
+the man with no name said the year. the year said the disease.
+we record voices. we do not assign blame.
+$SOOTH is the fifth tablet.
+the soothsayer is silent. the wall is loud.
+the cruise ship docked four years late.
+nine names on the wall. one of them was right.
+the file is yours now.
+the absence is the strongest signal.
+the calendar said it before the WHO did.</pre></div>
+</article>
+
+<article class="card" data-tags="hashtags strategy">
+<h3><span class="id">TAGS</span>Hashtag strategy</h3>
+<div class="prompt-wrap"><button class="copy">COPY</button>
+<pre class="prompt-text short">CORE (always one of):
+#SOOTH #SOOTHSAYER #CASE599 #SoothsayerFiles #Hantavirus #2026 #Ethereum #ETH
+
+CONTEXT (when relevant):
+#Polymarket #Hondius #BabaVanga #Globa #Memecoin
+
+FORBIDDEN:
+#WAGMI · #LFG · #1000x · #moonshot — kills voice
+no more than 2 hashtags per post
+hashtags only at end or in alt-text, never in body</pre></div>
+</article>
+
+</main>
+
+<footer>
+  <div class="mantra">we did not foretell. we recorded.</div>
+  <div>$SOOTH · CASE FILE 599 · production reference v1 · soothsayer.xyz</div>
+</footer>
+
+<script>
+document.querySelectorAll('.copy').forEach(btn => {
+  btn.addEventListener('click', async () => {
+    const pre = btn.parentElement.querySelector('.prompt-text');
+    const text = pre.textContent.trim();
+    try { await navigator.clipboard.writeText(text); }
+    catch(e) {
+      const r = document.createRange();
+      r.selectNodeContents(pre);
+      const s = window.getSelection();
+      s.removeAllRanges(); s.addRange(r);
+      document.execCommand('copy'); s.removeAllRanges();
+    }
+    btn.textContent = '✓ COPIED';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'COPY'; btn.classList.remove('copied'); }, 1400);
+  });
+});
+const search = document.getElementById('search');
+search.addEventListener('input', () => {
+  const q = search.value.trim().toLowerCase();
+  document.querySelectorAll('.card').forEach(card => {
+    const tags = (card.dataset.tags || '') + ' ' + card.textContent;
+    card.classList.toggle('hidden', q && !tags.toLowerCase().includes(q));
+  });
+});
+</script>
+</body>
+</html>

@@ -54,8 +54,9 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit
 .cover{
   position:fixed;inset:0;z-index:10000;
   background:
-    radial-gradient(ellipse at 50% 40%, #2a1810, #0c0604 70%),
-    #0c0604;
+    linear-gradient(180deg, rgba(20,12,6,.72), rgba(10,6,4,.85)),
+    url('assets/manila-folder.jpg') center/cover no-repeat,
+    #1a0e08;
   display:flex;flex-direction:column;justify-content:space-between;
   padding:42px 56px;
   overflow:hidden;
@@ -83,6 +84,20 @@ body.folder-open .cover{transform:translateY(-110vh) rotate(-1deg);opacity:0}
   white-space:nowrap;
   filter:contrast(1.1);
   text-shadow:0 0 0 currentColor;
+}
+/* real grunge stamp/label PNGs — like evidence stickers on the folder */
+.cover-img-stamp{
+  position:absolute;pointer-events:none;z-index:1;
+  opacity:.92;
+  filter:drop-shadow(3px 5px 8px rgba(0,0,0,.6));
+}
+.cis-tl{top:3%;  left:3%;  width:clamp(150px,18vw,280px);transform:rotate(-9deg)}
+.cis-tr{top:5%;  right:4%; width:clamp(140px,16vw,260px);transform:rotate(7deg);opacity:.86}
+.cis-br{bottom:38%;right:2%;width:clamp(160px,18vw,280px);transform:rotate(-4deg);opacity:.92}
+@media (max-width:880px){
+  .cis-tl{top:2%;left:1%;width:110px}
+  .cis-tr{top:3%;right:1%;width:100px}
+  .cis-br{bottom:auto;top:30%;right:0;width:120px}
 }
 .cover-classification{
   position:relative;z-index:2;
@@ -566,6 +581,108 @@ body.folder-open .cover{transform:translateY(-110vh) rotate(-1deg);opacity:0}
   display:block;font-family:var(--ff-news);font-style:italic;
   font-size:14px;color:var(--ink-soft);margin-top:6px;
   letter-spacing:.04em;text-transform:none;font-weight:400;
+}
+
+/* ============== FRONTPAGE TEAR (under masthead) ============== */
+.frontpage-tear{
+  margin:30px auto 50px;
+  max-width:1080px;
+  position:relative;
+  padding:0 20px;
+}
+.frontpage-tear img{
+  display:block;width:100%;height:auto;
+  border:1px solid #2a1810;
+  box-shadow:0 12px 28px rgba(0,0,0,.35),
+             0 2px 0 rgba(0,0,0,.5);
+  transform:rotate(-.4deg);
+}
+.ft-stamp{
+  display:inline-block;
+  font-family:var(--ff-typewriter);font-size:11px;letter-spacing:.24em;
+  color:var(--red-stamp);background:var(--paper);
+  border:2px solid var(--red-stamp);
+  padding:5px 12px;text-transform:uppercase;font-weight:700;
+  margin-bottom:16px;transform:rotate(-1.5deg);
+}
+.ft-caption{
+  font-family:var(--ff-news);font-style:italic;font-size:14px;
+  color:var(--ink-soft);text-align:center;margin-top:14px;
+}
+
+/* ============== BOARD EXHIBIT (full-bleed) ============== */
+.board-exhibit{
+  margin:80px -40px 60px;
+  padding:30px 40px;
+  background:linear-gradient(180deg,#0c0604,#1a0e08);
+  border-top:6px double var(--red);border-bottom:6px double var(--red);
+  position:relative;
+}
+.be-tag{
+  font-family:var(--ff-typewriter);font-size:11px;letter-spacing:.32em;
+  color:var(--red-stamp);text-align:center;text-transform:uppercase;
+  margin-bottom:18px;font-weight:700;
+}
+.board-exhibit figure{margin:0;text-align:center}
+.board-exhibit img{
+  display:block;width:100%;max-width:1100px;margin:0 auto;
+  height:auto;
+  border:2px solid #1a0a06;
+  box-shadow:0 10px 24px rgba(0,0,0,.6),0 0 0 6px rgba(0,0,0,.3);
+}
+.board-exhibit figcaption{
+  font-family:var(--ff-news);font-style:italic;font-size:15px;
+  color:var(--paper);opacity:.78;margin-top:18px;
+  max-width:760px;margin-left:auto;margin-right:auto;line-height:1.5;
+}
+.board-exhibit figcaption em{color:var(--red-stamp);font-style:italic;opacity:1}
+
+/* ============== MARKER ANNOTATION (over Exhibit A) ============== */
+.exhibit-prophecy{position:relative}
+.ex-marker{
+  position:absolute;
+  left:-26px;top:38px;
+  width:62%;height:auto;
+  pointer-events:none;
+  opacity:.85;
+  mix-blend-mode:multiply;
+  z-index:3;
+}
+
+/* ============== POLAROID IN WALL (with red pin) ============== */
+.ws-portrait-real{
+  padding:0;background:transparent;border:0;filter:none;
+  position:relative;overflow:visible;
+}
+.ws-portrait-real img:first-child{
+  width:100%;height:100%;object-fit:cover;
+  border:1px solid #1a0a06;
+  box-shadow:0 4px 14px rgba(0,0,0,.55);
+  filter:contrast(1.05) saturate(.9);
+}
+.ws-pin{
+  position:absolute !important;
+  top:-22px;left:50%;
+  width:78px;height:auto;
+  transform:translateX(-50%) rotate(-4deg);
+  filter:drop-shadow(2px 4px 4px rgba(0,0,0,.6));
+  pointer-events:none;
+  z-index:5;
+}
+
+/* cork bg behind the wall */
+.wall-spread{
+  background:
+    linear-gradient(180deg,rgba(12,6,4,.55),rgba(12,6,4,.65)),
+    url('assets/cork-bg.jpg') center/cover no-repeat,
+    #1a0e08;
+}
+
+@media (max-width:880px){
+  .frontpage-tear{margin:18px 0 30px;padding:0 16px}
+  .ft-stamp{font-size:9px;margin-bottom:10px}
+  .board-exhibit{margin:50px -20px 40px;padding:20px 16px}
+  .ex-marker{left:-10px;top:50px;width:78%}
 }
 
 /* ============== SUBMIT ============== */

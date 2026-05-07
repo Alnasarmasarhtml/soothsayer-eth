@@ -20,6 +20,11 @@
 
 <!-- ============== FOLDER COVER (lifts away on click) ============== -->
 <div id="cover" class="cover" aria-hidden="false">
+  <!-- real grunge stamp overlays -->
+  <img class="cover-img-stamp cis-tl" src="assets/stamp-confidential-1.png" alt="" aria-hidden="true"/>
+  <img class="cover-img-stamp cis-tr" src="assets/stamp-confidential-2.png" alt="" aria-hidden="true"/>
+  <img class="cover-img-stamp cis-br" src="assets/stamps-sheet.png" alt="" aria-hidden="true"/>
+
   <!-- Tiled CONFIDENTIAL watermark layer -->
   <div class="cover-watermark">
     <span style="top:4%; left:6%; transform:rotate(-12deg)">CONFIDENTIAL</span>
@@ -95,6 +100,13 @@
 
 <main class="article">
 
+<!-- ============== FRONTPAGE TEAR SHEET ============== -->
+<section class="frontpage-tear">
+  <div class="ft-stamp">— FRONT PAGE PROOF — file vol. I · no. 1 · do not distribute</div>
+  <img src="assets/header-newspaper.jpg" alt="The Soothsayer Files · Case 599 · The Eight-Word Prophecy — front page" />
+  <p class="ft-caption">First proof, pulled from the archive. The article that follows is a longer reading of the same case.</p>
+</section>
+
 <!-- ============== ARTICLE TITLE PAGE ============== -->
 <section class="title-page">
   <div class="tp-kicker">— A RECORD IN ONE LETTER —</div>
@@ -126,6 +138,7 @@
       <div class="ex-line ex-line-2">2026: Hantavirus</div>
       <div class="ex-cite">@iamasoothsayer · 11 Jun 2022 · 8:30 AM UTC<br/><a href="https://x.com/iamasoothsayer/status/1535494638391664641" target="_blank" rel="noopener">x.com/iamasoothsayer/status/1535494638391664641 ↗</a></div>
       <div class="ex-stamp">UNEDITED · GROK</div>
+      <img class="ex-marker" src="assets/marker-annotations.png" alt="" aria-hidden="true"/>
     </div>
 
     <p>That was the entire post. The account, calling itself "soothsayer" with the handle <b>@iamasoothsayer</b>, would go on to make three more posts in the seven days that followed — short aphorisms, the kind of generic emotional epigram one would expect from a teenage Tumblr blog. <em>"Everyone is happy today and weep tomorrow."</em> <em>"Love is jealous with limitations."</em> And then, on June 17, 2022, the account fell silent.</p>
@@ -198,6 +211,15 @@
   </div>
 </section>
 
+<!-- ============== FULL-BLEED BOARD ============== -->
+<section class="board-exhibit">
+  <div class="be-tag">EXHIBIT — THE BOARD</div>
+  <figure>
+    <img src="assets/board-detective.jpg" alt="The file room: cork board with WHO bulletin, the prophecy tweet, polaroids of nine voices, red yarn connecting them, a desk lamp lighting the work."/>
+    <figcaption>— the file room · 8 may 2026. Nine voices. Three continents. One cruise ship. <em>"we did not foretell. we recorded."</em></figcaption>
+  </figure>
+</section>
+
 <!-- ============== EXHIBIT D — THE WALL (yearbook spread) ============== -->
 <section class="wall-spread" id="wall">
   <div class="ws-tag">EXHIBIT D · the wall</div>
@@ -205,14 +227,9 @@
 
   <div class="ws-grid">
     <article class="ws-cell ws-cell-anchor">
-      <div class="ws-portrait ws-portrait-mystery">
-        <svg viewBox="0 0 100 120" aria-hidden="true">
-          <rect width="100" height="120" fill="#1a1318"/>
-          <path d="M22 120 Q18 70, 38 38 Q48 22, 50 22 Q52 22, 62 38 Q82 70, 78 120 Z" fill="#3a050d"/>
-          <path d="M36 44 Q40 28, 50 26 Q60 28, 64 44 Q60 60, 50 70 Q40 60, 36 44 Z" fill="#0a0608"/>
-          <ellipse cx="50" cy="50" rx="2.5" ry="1.2" fill="#ede0c4"/>
-          <ellipse cx="50" cy="50" rx="1" ry="1" fill="#4a7d3a"/>
-        </svg>
+      <div class="ws-portrait ws-portrait-real">
+        <img src="assets/polaroid-soothsayer.jpg" alt="Polaroid: hooded figure, single eye visible. Subject unknown. June 2022."/>
+        <img class="ws-pin" src="assets/redpin-string.png" alt="" aria-hidden="true"/>
       </div>
       <div class="ws-name">@iamasoothsayer</div>
       <div class="ws-where">anonymous · english</div>
